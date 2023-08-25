@@ -1,7 +1,7 @@
 # Web-App-group
 Group Name: TBD
 
-Group Memebers:
+Group Members:
 1. Hsuan-Wen(Peggy), Wang
 
 
