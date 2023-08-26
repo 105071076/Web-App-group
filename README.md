@@ -8,3 +8,5 @@ Group Members:
 
 
 Project Ideas:
+1. Redesigning University Registration web page
+2. 
