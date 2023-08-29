@@ -1,6 +1,6 @@
 # Web-App-group
 
-Group Name: TBD
+Group Name: Happy Hump Day
 
 Group Members:
 
