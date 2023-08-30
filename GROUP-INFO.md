@@ -14,3 +14,4 @@ Project Ideas:
 1. Redesigning University Registration web page and management system
 2. UT useful information repository social media (nap places, food places, tourist places, picture spots, running places, etc)
 3. Social Media platform for developers with interactive features such as posts, likes, comments, etc.
+4. A workplace for developers/team to collaborate on their work
