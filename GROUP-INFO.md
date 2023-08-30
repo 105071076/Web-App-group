@@ -9,4 +9,4 @@ Group Members:
 3. Sairam Tushar Maddala
 4. Jie(Hazel) Tsai
 
-Project Idea: Rent Buddy - An interactive website where users can find and rent appartments. Features include ratings, reviews, location based filtering etc.
+Project Idea: UTCodeJest - Collaborative workspace/ social media hub for UT student developers 
