@@ -9,4 +9,4 @@ Group Members:
 3. Sairam Tushar Maddala
 4. Jie(Hazel) Tsai
 
-Project Idea: UTCodeJest - Collaborative workspace/ social media hub for UT student developers 
+Project Idea: UTCodeJest - Collaborative workspace/social media hub for UT student developers 
