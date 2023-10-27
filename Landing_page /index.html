@@ -14,6 +14,11 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous">
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" 
+        integrity="sha384-cy1T6p5DHn11pPGD4R4L7JdXNcikbPFOi0rnVU90+RWuM1OgWPPJe9gDjzZcJbdI" 
+        crossorigin="anonymous">
+    </script>
+
     
     <style>
         /* Navbar styles */
@@ -175,8 +180,6 @@
             margin-left: 5px; /* Adjust the space between text and arrow as needed */
         }
 
-
-
         /* OnboardingNav styles */
         #onboardingNav a {
             display: flex;
@@ -251,11 +254,80 @@
             margin-top: 200px;
         }
 
+        h3 {
+            font-family: "montserrat", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 30px;
+            margin-top: 120px; 
+            margin-left: 150px; /* Adjust the left margin as needed */
+        }
+
+        /* UT color */
+        .custom-color {
+            font-family: "montserrat", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            color: #FDB43D;
+        }
+
+        /* Social media icons with pink circles */
+        .col-md-3.text-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 15px; /* Adjusted the top margin to move the entire section down */
+        }
+
+        /* Pink circles */
+        .icon-circle {
+            width: 25px;
+            height: 25px;
+            background-color: #E42D55;
+            border-radius: 50%;
+            margin: -15px 5px 0 15px; /* Adjusted the top margin to move the circles down */
+            position: relative; /* Added absolute positioning */
+        }
+
+        /* Image icons */
+        .col-md-3.text-center img {
+            position: relative;
+            z-index: 1;
+            margin-top: 30px; /* Adjusted the margin to move the icons down */
+        }
+
+        .footerbg {
+            background-color: #FFFFFF;
+            margin-top: -400px;
+            margin-bottom: 100px;
+            padding: 20px;
+        }
+
+        .footerlogo {
+            font-family: "montserrat", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+        }
+
+        .footer {
+            display: flex;
+            align-items: center;
+        }
+
+        .footerlogo {
+            margin-left: 5px;
+        }
+
     </style>
-    
+
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
             <!-- Logo -->
@@ -331,12 +403,42 @@
         </section>
         <section id="section4" style="padding-top: 80px;">
             <div class="section4txt">
-                <h2>Ready to be part of <br>UT developer Community?</h2>
+                <h3>Ready to be part of <br><span class="custom-color"> UT </span> developer Community?</h3>
             </div>
             <button class="rounded-btn join-btn" style="margin-top: 30px; margin-left: 650px;">Join UTCodeJest <span class="arrow">></span></button>
         </section>
         
     </div>
+
+    <footer class="footerbg text-dark py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Logo and title on the left top -->
+                <div class="footer">
+                    <img src="logo.png" alt="Logo" width="40" height="20" class="d-inline-block align-top">
+                    <span class="footerlogo">UTCodeJest</span>
+                    <p class="footer-texts m-5">About</p>
+                    <p class="footer-texts m-2">Discover</p>
+                </div>
+    
+                <!-- Social media icons with pink circles -->
+                <div class="col-md-3 text-center">
+                    <a href="https://www.linkedin.com/" class="text-light me-3 position-relative">
+                        <img src="Linkedin.png" alt="Linkedin" width="25" height="25"></i> <!-- Font Awesome LinkedIn icon -->
+                        <div class="icon-circle"></div>
+                    </a>
+                    <a href="https://www.instagram.com/" class="text-light me-3 position-relative">
+                        <img src="Instagram.png" alt="Instagram" width="25" height="25"></i> <!-- Font Awesome Instagram icon -->
+                        <div class="icon-circle"></div>
+                    </a>
+                    <a href="https://www.facebook.com/" class="text-light position-relative">
+                        <img src="Facebook.png" alt="Facebook" width="25" height="25"></i> <!-- Font Awesome Facebook icon -->
+                        <div class="icon-circle"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Enable scrollspy using JavaScript
@@ -359,7 +461,6 @@
             window.dispatchEvent(new Event('scroll'));
         });
     </script>
-
 
 </body>
 
