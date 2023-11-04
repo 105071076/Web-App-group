@@ -22,8 +22,11 @@
 
 
     <style>
+
         /* CSS Style Sheet */
 
+
+        /* NAV BAR */
         body {
             margin-top: 50px;
             background-color: #EDEDF0;
@@ -197,15 +200,13 @@
             .search-bar input {
                 padding: 1px 1px 1px 40px; /* Adjust padding to make room for the icon */
             }
-
         }
-
 
         .nav-item {
             font-family: "montserrat", sans-serif;
             font-weight: 400;
             font-style: normal;
-            margin-right: 55px;
+            margin-right: 70px;
         }
 
         .nav-profile {
@@ -217,6 +218,7 @@
         .navbar {
             overflow-x: hidden;
         }
+
 
         <!--  MY UPDATES-->
         .float-container {
@@ -255,11 +257,11 @@
             .block2, .block3, .block4 {
                 width: 70%; /* The remaining space for block3 and block4 */
                 margin-left: 30%; /* Aligned with the new width of block */
-                
             }
         }
         
 
+        /* MY UPDATES */
         .block {
             font-family: "montserrat", sans-serif;
             font-size: 24px;
@@ -342,21 +344,6 @@
             margin-top: 8px;
         }
 
-        .inner-block-discussion {
-            font-family: "montserrat", sans-serif;
-            font-size: 16px;
-            height: 100%;
-            width: 1040px;
-            box-sizing: border-box;
-            margin-top: 12px;
-            margin-left: -35.9px; /* still figuring out a better way to revise this*/  
-            border-top: 1px solid #ced4da;
-            display: flex;
-            align-items: center;
-            padding-top: 12px; 
-            padding-left: 0px;
-        } 
-
 
         /*   POST   */
         .block2{
@@ -423,13 +410,12 @@
         }
 
         .custom-line {
-            width: 100%;            /* Ensure it spans the full width */
+            width: 100%; /* Ensure it spans the full width */
             border-top: 1px solid #959595;  /* Add a border-top to simulate the horizontal line */
             align-items: center;
             margin: 10px 0;
             margin-bottom: 13px;
         }
-
 
         .questions_block{
             color: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -491,6 +477,11 @@
             margin-left: 0;  /* Removes any margin before the first button to ensure alignment */
         }
 
+        .questions_block:hover {
+            background-color: #E3E6EA !important; /* Hover state background color */
+            border: 1px solid var(--border, #E3E6EA);
+        }
+
         .button-inactive {
             background: #F2D5DC; 
             color: #E42D55; 
@@ -540,18 +531,6 @@
             width: calc(33.33% - 16px); /* setting the width to roughly a third minus some margin for space between */
         }
 
-        .inner_discussions_block {
-            font-family: "montserrat", sans-serif;
-            font-weight: 600;
-            font-style: normal;
-            font-size: 16px;
-            color:#0A192B;
-            text-align: left; 
-            margin-top: 5px; 
-            margin-bottom: 0;
-            width: 100%;
-        }
-
         .discussion_title {
             margin-top: 10px;
             margin-bottom: 5px;
@@ -575,13 +554,9 @@
             background-color: #DAD9DD !important; /* Hover state background color */
         }
 
-        .questions_block:hover {
-            background-color: #E3E6EA !important; /* Hover state background color */
-            border: 1px solid var(--border, #E3E6EA);
-        }
-
-
     </style>
+
+
 </head>
 
 <body>
@@ -621,11 +596,13 @@
                 </ul>
             </div>
         </div>
+
     </nav>
     
 
     
     <div class="float-container">
+
         <!--My Updates-->
         <div class="block float-child" style="position: fixed;">
             <div class="title_container">MY UPDATES</div>
@@ -664,7 +641,6 @@
                         <img src="showmore-Icon.png" alt="Logo" width="24" height="24"></span></button>
                 </div>
 
-
         </div>
         
 
@@ -680,6 +656,7 @@
                 Create a Discussion
             </button>
         </div>
+
 
         <div class="block3 float-child">
             <div class="title_container">
@@ -728,6 +705,7 @@
 
         </div>
 
+
         <div class="block4 float-child">
             <div class="title_container">
                 TRENDING DISCUSSIONS
@@ -766,7 +744,6 @@
 
         </div>
 
-
     </div>
 
     <script>
@@ -780,8 +757,8 @@
             navbar.classList.remove("navbar-border");
           }
         }
-        </script>
-        
+
+    </script> 
 
 
 </body>
