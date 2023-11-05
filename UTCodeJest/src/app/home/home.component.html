@@ -22,14 +22,24 @@
 
 
     <style>
+
         /* CSS Style Sheet */
 
+
+        /* NAV BAR */
         body {
+            margin-top: 50px;
             background-color: #EDEDF0;
         }
 
         .navbar {
             background-color: #FFFBFC;
+            border-bottom: none; /* Hide border-bottom by default */
+        }
+
+        /* Show border-bottom when scrolled */
+        .navbar.navbar-border {
+            border-bottom: 1px solid #CECED2;
         }
 
         .navbar-brand {
@@ -123,7 +133,13 @@
             display: flex;
         }
 
+        /* General Search Bar Styles */
         .search-bar {
+            font-family: "roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            flex-grow: 1; /* Allow the search bar to take up available space */
+            width: 47%; 
             position: relative;
             display: flex;
             align-items: center;
@@ -131,35 +147,66 @@
             border: 1px solid #ced4da;
             border-radius: 20px;
             padding: 6px 15px;
-            /* margin-left: 300px;
-            width: 50%;
-            margin-right: 150px; */
-            width: calc(100% - 775px);  /* adjust as needed */
             margin-left: 300px;
         }
 
-        .search-bar input {
-            border: none;
-            outline: none;
-            flex-grow: 1;
+        .search-bar input[type="search"]::placeholder {
+            color: #bbb !important;
         }
 
-        input[type="search"]::placeholder {
-            color: #bbb;
-            }
+        .search-bar input[type="search"] {
+            border: none;
+            outline: none;
+            width: 100%; /* Full width of its parent */
+            padding: 0 15px; /* Padding for text inside input, adjust as needed */
+            padding-left: 40px; 
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
 
         input.nosubmit {
+            width: auto; /* Let it be flexible instead of a fixed percentage */
             border: none;
-            width: 290%; /* change the width of cancel bar */
             padding: 1px 1px 1px 40px;
             background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+        }
+
+        form.nosubmit {
+            margin-left: 0;
+            padding: 0;
+            border: none;
+            width: 100%; /* Make sure the form takes the full width of its parent */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .search-bar {
+                width: auto; /* Let the width be auto to take up necessary space */
+                padding: 0;
+                flex-grow: 1; /* Allow the search bar to grow as needed */
+            }
+
+            .navbar .container-fluid {
+                flex-direction: auto;
+                align-items: stretch; /* Ensure full width is used */
+            }
+
+            /* This ensures that both elements are treated equally in the flexbox ordering */
+            .navbar-collapse,
+            .search-bar {
+                order: 0; /* Set to the same order to appear next to each other */
+            }
+
+            /* Adjust the padding of the search input to fit within the search bar */
+            .search-bar input {
+                padding: 1px 1px 1px 40px; /* Adjust padding to make room for the icon */
+            }
         }
 
         .nav-item {
             font-family: "montserrat", sans-serif;
             font-weight: 400;
             font-style: normal;
-            margin-right: 55px;
+            margin-right: 70px;
         }
 
         .nav-profile {
@@ -172,66 +219,89 @@
             overflow-x: hidden;
         }
 
-        @media (max-width: 992px) {
-            .search-bar {
-                width: 35%;
-                margin-left: -90px;
-            }
 
-            input.nosubmit{
-                width: 120%;
-            }
-
-            .navbar .container-fluid {
-                flex-direction: column;
-            }
-        }
-
-        <!-- MY UPDATES-->
+        <!--  MY UPDATES-->
         .float-container {
             display: flex;
+            position: relative;
             flex-direction: row; /* default value: items will be placed from left to right */
-            flex-wrap: wrap; /* allows the items to wrap onto multiple lines if necessary */
+            /* flex-wrap: wrap; allows the items to wrap onto multiple lines if necessary */
+            flex-wrap: nowrap; /* Ensure blocks don't wrap to the next line */
+            justify-content: space-between; /* Spacing between the two blocks */
+            align-items: flex-start;
         }
+        
         @media (max-width: 768px) {
             .float-container {
                 flex-direction: column;
             }
         }
 
+        .float-child {
+            float: left;
+            margin-right: 20px;  /* Adjust as necessary for spacing between floated elements */
+        }
+
+        /* Clearfix to clear floated elements */
+        .float-container::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Media Query for smaller screens */
+        @media (max-width: 768px) {
+            .block {
+                width: 30%; /* Assuming the block takes more space on smaller screens */
+            }
+            .block2, .block3, .block4 {
+                width: 70%; /* The remaining space for block3 and block4 */
+                margin-left: 30%; /* Aligned with the new width of block */
+            }
+        }
+        
+
+        /* MY UPDATES */
         .block {
             font-family: "montserrat", sans-serif;
             font-size: 24px;
-            width: 22%;
+            width: 25%;
             position: relative;
             background-color: #FFFBFC; 
-            padding: 15px 36px; 
+            padding: 10px 20px; 
             border-radius: 12px; 
             display: flex;
             flex-direction: column;
             margin-top: 20px;
             margin-left: 36px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            width: calc(22% - 20px); /* Subtract margin from width */
+            border: 1px solid #CECED2;
         }
 
         .inner-block {
             font-family: "montserrat", sans-serif;
             font-size: 15px;
-            width: 90%;
+            width: 105%;
             display: flex;
             flex-direction: column;
             align-self: center;
             text-align: center;
+            margin-top: -5px;
         }   
+
+        .inner-block > .update_block:first-child {
+            margin-top: 10px; /* Adjust this value to your preference */
+        }
 
         .update_block{
             font-family: "montserrat", sans-serif;
-            width: 132%;
+            width: 100%;
             border: 1px solid #ced4da;
             background-color: rgba(206, 206, 210, 0.12); 
             display: flex;
             border-radius: 12px;
-            margin-top: 8px; 
             flex-direction: column;
             align-self: center;
         } 
@@ -247,8 +317,26 @@
 
         hr{
             background-color: #959595;
-            width: 128%;
-            margin-left: -36px;
+            width: 100%;
+            margin-top: 12px;
+        }
+
+        .btn-show_more {
+            font-family: "montserrat", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 15px;
+            color: #000000; /* Set the default font color */
+            border: none; /* Remove the border */
+            margin-top: -6px;
+            margin-bottom: -5px;
+        }
+
+        .btn-show_more:focus,
+        .btn-show_more:active {
+            color: #FF0000; /* Change the font color on click */
+            outline: none; /* Remove the outline when the button is active */
+            border: none; /* Remove the border when the button is active */
         }
 
         .sm{
@@ -256,85 +344,242 @@
             margin-top: 8px;
         }
 
-        .inner-block-discussion {
-            font-family: "montserrat", sans-serif;
-            font-size: 16px;
-            height: 100%;
-            width: 1040px;
-            box-sizing: border-box;
-            margin-top: 12px;
-            margin-left: -35.9px; /* still figuring out a better way to revise this*/  
-            border-top: 1px solid #ced4da;
-            display: flex;
-            align-items: center;
-            padding-top: 12px; 
-            padding-left: 0px;
-        } 
 
-        .discussion_block {
-            font-family: "montserrat", sans-serif;
-            font-size: 24px;
-            border: 1px solid #CECED2;;
-            width: 1040px;
-            height: 1052px;
+        /*   POST   */
+        .block2{
+            width: 75%;
+            margin-left: 25%;
             position: relative;
             background-color: #FFFBFC; 
-            padding: 20px 0 20px 36px;
+            padding: 10px 20px; 
             border-radius: 12px; 
             display: flex;
-            flex-direction: column; 
-            float: right;
-            margin-top: 20px;
-            margin-left: 20px; /* Adjusted the left margin to accommodate the padding */
+            flex-direction: row;
+            margin-top: 20px; 
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            box-sizing: border-box; 
+            box-sizing: border-box;
+            width: calc(75% - 30px); /* Subtract margin from width */
+            gap: 12px;
+            align-items: center;
+            border: 1px solid #CECED2;
         }
 
-        .filter-button {
-            font-family: "montserrat", sans-serif;
+        .post_block{
+            font-family: "roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
             font-size: 14px;
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            padding: 6px 12px;
-            background-color: #DAD9DD;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        .discussion_content{
-            font-family: "montserrat", sans-serif;
-            font-size: 16px;
-            height: 290px;
-            width: 498px;
-            border: 1px solid #ced4da;
-            background-color: rgba(206, 206, 210, 0.12); 
+            color:rgba(10, 25, 43, 0.65);
+            border-radius: 10px;
+            border: 1px solid var(--border, #CECED2);
+            background: #FFF;
             display: flex;
-            border-radius: 12px;
-            padding: 12px;
+            padding: 7px 12px;
+            align-items: center;
+            gap: 12px;
+            align-self: stretch;
+            margin-top: 6px;
+        }
+        
+
+        /*   TOP QUESTIONS   */
+        .block3 {
+            width: 75%;
+            margin-left: 25%;
+            position: relative;
+            background-color: #FFFBFC; 
+            padding: 10px 20px; 
+            border-radius: 12px; 
+            margin-top: 10px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            width: calc(75% - 30px); /* Subtract margin from width */
+            border: 1px solid #CECED2;
+            font-family: "montserrat", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 24px;
         }
 
+        .title_container {
+            display: flex;
+            justify-content: space-between; /* This will push the items to the edges */
+            align-items: center; /* This will align the items vertically centered */
+            width: 100%; /* Make sure it stretches to the full width of its parent */
+            margin-top: 5px;
+        }
+
+        .custom-line {
+            width: 100%; /* Ensure it spans the full width */
+            border-top: 1px solid #959595;  /* Add a border-top to simulate the horizontal line */
+            align-items: center;
+            margin: 10px 0;
+            margin-bottom: 13px;
+        }
+
+        .questions_block{
+            color: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            border: 1px solid var(--border, #CECED2);
+            background: rgba(229, 229, 233, 0.40);
+            display: flex;
+            padding: 5px 12px;
+            align-items: center;
+            gap: 12px;
+            align-self: stretch;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            flex-direction: column;
+        }
+
+        .inner_questions_block{
+            font-family: "roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 14px;
+            color:0A192B;
+            text-align: left; 
+            margin-top: 5px; 
+            margin-bottom: 5px;
+            width: 100%;
+        }
+
+        .question_title{
+            font-family: "montserrat", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 16px;
+            color:#0A192B;
+            text-align: left; 
+            margin-top: 5px; 
+            margin-bottom: 0;
+        }
+
+        .content{
+            margin-top: 12px; 
+        }
+
+        .questiontype_block {
+            background: #F2D5DC; 
+            color: #E42D55; 
+            border: none;
+            border-radius: 10px; 
+            font-size: 14px; /* Adjusted font size from 10px to 8px */
+            margin-right: 5px;
+            margin-top: -5px; /* Adjust this value to increase or decrease the spacing */
+        }
+
+        .content, .block3 .ptitle {
+            margin-left: 7px;  /* Added to align the text with the "Web development" button */
+        }
+
+        .questiontype_block:first-of-type {
+            margin-left: 0;  /* Removes any margin before the first button to ensure alignment */
+        }
+
+        .questions_block:hover {
+            background-color: #E3E6EA !important; /* Hover state background color */
+            border: 1px solid var(--border, #E3E6EA);
+        }
+
+        .button-inactive {
+            background: #F2D5DC; 
+            color: #E42D55; 
+            border-color: #E3E6EA;
+
+            /* Prevents the hover effect */
+            pointer-events: none;
+        }
+
+        
+        /*  TRENDING DISCUSSION  */
+        .block4 {
+            width: 75%;
+            margin-left: 25%;
+            position: relative;
+            background-color: #FFFBFC; 
+            padding: 10px 20px; 
+            border-radius: 12px; 
+            margin-top: 10px; 
+            margin-bottom: 155px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            width: calc(75% - 30px); /* Subtract margin from width */
+            border: 1px solid #CECED2;
+            font-family: "montserrat", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 24px;
+            flex-direction: row;
+            display: flex;
+            justify-content: space-between; /* This will add space between each discussions_block */
+            flex-wrap: wrap; /* This will allow the items to wrap to the next line if there's not enough space */
+        }
+
+        .discussions_block {
+            color: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            border: 1px solid var(--border, #CECED2);
+            background: rgba(229, 229, 233, 0.40);
+            display: flex;
+            padding: 5px 12px;
+            align-items: center;
+            gap: 12px;
+            align-self: stretch;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            width: calc(33.33% - 16px); /* setting the width to roughly a third minus some margin for space between */
+        }
+
+        .discussion_title {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center; /* This will vertically center align the image and the text */
+        }
+
+        /* For responsive images */
+        .inner_discussions_block img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .filter {
+            background: #E5E5E9; /* Set the default state background color */
+            /* ... other styles ... */
+        }
+
+        .filter:hover {
+            background-color: #DAD9DD !important; /* Hover state background color */
+        }
 
     </style>
+
+
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="home.html">
-                <img src="assets/assets/logo.png" alt="Logo" width="42" height="24" class="d-inline-block align-text-top">
+                <img src="logo.png" alt="Logo" width="42" height="24" class="d-inline-block align-text-top">
                 UTCodeJest
             </a>
-
+    
             <!-- Search Bar -->
             <div class="search-bar">
                 <form class="nosubmit">
-                  <input [(ngModel)]="modelName" class="nosubmit" type="search" placeholder="Search">
+                  <input class="nosubmit" type="search" placeholder="Search">
                 </form>
             </div>
-
+    
+            <!-- Toggler button for mobile view -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
@@ -346,109 +591,175 @@
                     </li>
                     
                     <a class="nav-profile" href="Profile.html">
-                        <img src="assets/assets/profile.png" alt="profile" width="30" height="30" class="d-inline-block align-text-top">
+                        <img src="profile.png" alt="profile" width="30" height="30" class="d-inline-block align-text-top">
                     </a>
                 </ul>
             </div>
         </div>
+
     </nav>
+    
 
     
     <div class="float-container">
+
         <!--My Updates-->
-        <div class="block">
-            MY UPDATES<hr>
+        <div class="block float-child" style="position: fixed;">
+            <div class="title_container">MY UPDATES</div>
+            <hr>
                 <div class="inner-block">
                     Questions I Asked 
                     <button class="update_block btn btn-light mb-2">
-                        <img src="assets/red_dot.png" width="10" height="10" style="align-items: left; margin-top: 5px;">
+                        <img src="red_dot.png" width="10" height="10" style="align-items: left; margin-top: 5px;">
                         <p style="text-align: left; font-weight: 600; margin-top: 5px; margin-bottom: 5px;">Problems with num()</p>
                         <p class="ptitle">Asked 3 days ago  .  3 new responses</p>
                     </button>
             
                     <button class="update_block btn btn-light mb-2">
-                        <img src="assets/red_dot.png" width="10" height="10" style="align-items: left; margin-top: 5px;">
+                        <img src="red_dot.png" width="10" height="10" style="align-items: left; margin-top: 5px;">
                         <p style="text-align: left; font-weight: 600; margin-top: 5px; margin-bottom: 5px;">Problems with num()</p>
                         <p class="ptitle">Asked 3 days ago  .  3 new responses</p>
                     </button>
-                    <span class="sm">Show more <img src="assets/showmore-Icon.png" alt="Logo" width="42" height="24"></span>
+                    <span class="sm"><button class="btn btn-show_more show-more-btn">Show more
+                        <img src="showmore-Icon.png" alt="Logo" width="24" height="24"></span></button>
                 </div><hr>
                 
                 <div class="inner-block">
                     Questions I Followed
                     <button class="update_block btn btn-light mb-2">
-                        <img src="assets/red_dot.png" width="10" height="10" style="align-items: left; margin-top: 5px;">
+                        <img src="red_dot.png" width="10" height="10" style="align-items: left; margin-top: 5px;">
                         <p style="text-align: left; font-weight: 600; margin-top: 5px; margin-bottom: 5px;">Problems with num()</p>
                         <p class="ptitle">Asked 3 days ago  .  3 new responses</p>
                     </button>
             
                     <button class="update_block btn btn-light mb-2">
-                        <img src="assets/red_dot.png" width="10" height="10" style="align-items: left; margin-top: 5px;">
+                        <img src="red_dot.png" width="10" height="10" style="align-items: left; margin-top: 5px;">
                         <p style="text-align: left; font-weight: 600; margin-top: 5px; margin-bottom: 5px;">Problems with num()</p>
                         <p class="ptitle">Asked 3 days ago  .  3 new responses</p>
                     </button>
-                    <span class="sm">Show more <img src="assets/showmore-Icon.png" alt="Logo" width="42" height="24"></span>
+                    <span class="sm"><button class="btn btn-show_more show-more-btn" style="margin-bottom: 0px;">Show more
+                        <img src="showmore-Icon.png" alt="Logo" width="24" height="24"></span></button>
                 </div>
+
+        </div>
+        
+
+        <div class="block2 float-child">
+            <img src="profile.png" alt="profile" width="30" height="30">
             
-            
+            <button class="post_block btn btn-light mb-2">
+                <img src="help.png" alt="Ask" width="15" height="15" class="d-inline-block align-center" style="margin-right: 5px;">
+                Ask a Question
+            </button>
+            <button class="post_block btn btn-light mb-2">
+                <img src="write.png" alt="Create" width="15" height="15" class="d-inline-block align-center" style="margin-right: 5px;">
+                Create a Discussion
+            </button>
         </div>
 
 
-        <!--All disscussions-->
-        <div class="discussion_block">
-        ALL DISCUSSIONS
-            
-            <div class="inner-block-discussion" style="display: flex; flex-wrap: wrap; justify-content: space-between; padding: 16px;">
-                <button class="filter-button">Filter</button>
-                <div class="discussion_content" style="margin-top: 12px; margin-right: 12px; width: 498px; height: 308px;">
-                    <p style="text-align: left; font-weight: 600; font-size: 20px"> 
-                        <img src="assets/bootstrap.png" alt="Logo" width="466" height="197" style="margin-bottom: 8px;">Bootstrap Alternatives 2023
-                        <br>  <img src="assets/memoji.png" alt="Logo" width="32" height="32"> 
-                        Eren Jaeger
-                    </p>
-                </div>
-                <div class="discussion_content" style="margin-top: 12px; width: 498px; height: 308px;">
-                    <p style="text-align: left; font-weight: 600; font-size: 20px; margin:8px"> 
-                        <img src="assets/amazon.png" alt="Logo" width="466" height="197" style="margin-bottom: 8px;">Amazon 
-                        <br>  <img src="assets/david.png" alt="Logo" width="32" height="32"> 
-                        David Chang
-                    </p> 
-                </div>
-                <div class="discussion_content" style="margin-top: 12px; margin-right: 12px;width: 498px; height: 308px;">
-                    <p style="text-align: left; font-weight: 600; font-size: 20px"> 
-                        <img src="assets/bootstrap.png" alt="Logo" width="466" height="197" style="margin-bottom: 8px;">Bootstrap Alternatives 2023
-                        <br>  <img src="assets/memoji.png" alt="Logo" width="32" height="32"> 
-                        Eren Jaeger
-                    </p>
-
-                </div>
-                <div class="discussion_content" style="margin-top: 12px; width: 498px; height: 308px;">
-                    <p style="text-align: left; font-weight: 600; font-size: 20px; margin:8px"> 
-                        <img src="assets/amazon.png" alt="Logo" width="466" height="197" style="margin-bottom: 8px;">Amazon 
-                        <br>  <img src="assets/david.png" alt="Logo" width="32" height="32"> 
-                        David Chang
-                    </p> 
-                </div>
-                <div class="discussion_content" style="margin-top: 12px; margin-right: 12px; width: 498px; height: 308px;">
-                    <p style="text-align: left; font-weight: 600; font-size: 20px"> 
-                        <img src="assets/bootstrap.png" alt="Logo" width="466" height="197" style="margin-bottom: 8px;">Bootstrap Alternatives 2023
-                        <br>  <img src="assets/memoji.png" alt="Logo" width="32" height="32"> 
-                        Eren Jaeger
-                    </p>
-                </div>
-                <div class="discussion_content" style="margin-top: 12px; width: 498px; height: 308px;">
-                    <p style="text-align: left; font-weight: 600; font-size: 20px; margin:8px"> 
-                        <img src="assets/amazon.png" alt="Logo" width="466" height="197" style="margin-bottom: 8px;">Amazon 
-                        <br>  <img src="assets/david.png" alt="Logo" width="32" height="32"> 
-                        David Chang
-                    </p> 
-                </div>
-
+        <div class="block3 float-child">
+            <div class="title_container">
+                TOP QUESTIONS
+                <button class="filter btn btn-light" style="font-size: 14px; border-radius: 10px;">View All</button>
             </div>
+            <hr class="custom-line">
+            <a class="questions_block btn" href="#" role="button">
+                <div class="inner_questions_block">
+                    <div class="question_title">
+                        <img src="david.png" width="30" height="30">
+                        <h style="margin-left: 5px;">Problems with num()</h>
+                    </div>
+                    <p class="content">I faced problems in adding num() to my sorting function.</p>
+                    <button class="questiontype_block btn btn-light mb-2 button-inactive">Web development</button>
+                    <button class="questiontype_block btn btn-light mb-2 button-inactive">Bootstrap</button>
+                    <p class="ptitle">Asked 3 days ago</p>
+                </div>
+            </a>
 
-        </div>   
-    
+            <a class="questions_block btn" href="#" role="button">
+                <div class="inner_questions_block">
+                    <div class="question_title">
+                        <img src="profile3.png" width="30" height="30">
+                        <h style="margin-left: 5px;">Problems with num()</h>
+                    </div>
+                    <p class="content">I faced problems in adding num() to my sorting function.</p>
+                    <button class="questiontype_block btn btn-light mb-2 button-inactive">Web development</button>
+                    <button class="questiontype_block btn btn-light mb-2 button-inactive">Bootstrap</button>
+                    <p class="ptitle">Asked 3 days ago</p>
+                </div>
+            </a>
+
+            <a class="questions_block btn" href="#" role="button">
+                <div class="inner_questions_block">
+                    <div class="question_title">
+                        <img src="profile3.png" width="30" height="30">
+                        <h style="margin-left: 5px;">Problems with num()</h>
+                    </div>
+                    <p class="content">I faced problems in adding num() to my sorting function.</p>
+                    <button class="questiontype_block btn btn-light mb-2 button-inactive">Web development</button>
+                    <button class="questiontype_block btn btn-light mb-2 button-inactive">Bootstrap</button>
+                    <p class="ptitle">Asked 3 days ago</p>
+                </div>
+            </a>
+
+        </div>
+
+
+        <div class="block4 float-child">
+            <div class="title_container">
+                TRENDING DISCUSSIONS
+                <button class="filter btn btn-light" style="font-size: 14px; border-radius: 10px;">View All</button>
+            </div>
+            <hr class="custom-line">
+            <button class="discussions_block btn btn-light mb-2">
+                <div class="inner_discussions_block">
+                    <img src="bootstrap.png" alt="Logo" width="304" height="118">
+                    <div class="discussion_title">
+                        <img src="profile3.png" width="30" height="30">
+                        <h style="margin-left: 5px;">Bootstrap Alternatives 2023</h>
+                    </div>
+                </div>
+            </button>
+
+            <button class="discussions_block btn btn-light mb-2">
+                <div class="inner_discussions_block">
+                    <img src="amazon.png" alt="Logo" width="304" height="118">
+                    <div class="discussion_title">
+                        <img src="profile4.png" width="30" height="30">
+                        <h style="margin-left: 5px;">Amazon Job Openings</h>
+                    </div>
+                </div>
+            </button>
+
+            <button class="discussions_block btn btn-light mb-2">
+                <div class="inner_discussions_block">
+                    <img src="css.png" alt="Logo" width="304" height="118">
+                    <div class="discussion_title">
+                        <img src="profile1.png" width="30" height="30">
+                        <h style="margin-left: 5px;">VS CODE HTML & CSS Tips</h>
+                    </div>
+                </div>
+            </button>
+
+        </div>
+
     </div>
+
+    <script>
+        window.onscroll = function() { addNavbarBorder() };
+        
+        function addNavbarBorder() {
+          var navbar = document.querySelector('.navbar');
+          if (window.pageYOffset > 0) {
+            navbar.classList.add("navbar-border");
+          } else {
+            navbar.classList.remove("navbar-border");
+          }
+        }
+
+    </script> 
+
 
 </body>
 
