@@ -27,9 +27,9 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <script src="assets/https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="assets/https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="assets/https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <style>
       /* CSS Style Sheet */
@@ -216,7 +216,7 @@
         font-family: "montserrat", sans-serif;
         font-weight: 400;
         font-style: normal;
-        margin-right: 70px;
+        margin-right: 55px;
       }
 
       .nav-profile {
@@ -353,7 +353,16 @@
         margin-top: 8px;
       }
 
-      /*   POST   */
+      .nav-link-button {
+        position: relative;
+        border: #000000;
+        background: #000000;
+        color: #ffffff;
+        padding: 8px 20px;
+        border-radius: 9999px;
+      }
+
+      /*  ALL DISCUSSION  */
       .block2 {
         width: 75%;
         margin-left: 25%;
@@ -361,153 +370,7 @@
         background-color: #fffbfc;
         padding: 10px 20px;
         border-radius: 12px;
-        display: flex;
-        flex-direction: row;
         margin-top: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        box-sizing: border-box;
-        width: calc(75% - 30px); /* Subtract margin from width */
-        gap: 12px;
-        align-items: center;
-        border: 1px solid #ceced2;
-      }
-
-      .post_block {
-        font-family: "roboto", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 14px;
-        color: rgba(10, 25, 43, 0.65);
-        border-radius: 10px;
-        border: 1px solid var(--border, #ceced2);
-        background: #fff;
-        display: flex;
-        padding: 7px 12px;
-        align-items: center;
-        gap: 12px;
-        align-self: stretch;
-        margin-top: 6px;
-      }
-
-      /*   TOP QUESTIONS   */
-      .block3 {
-        width: 75%;
-        margin-left: 25%;
-        position: relative;
-        background-color: #fffbfc;
-        padding: 10px 20px;
-        border-radius: 12px;
-        margin-top: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        box-sizing: border-box;
-        width: calc(75% - 30px); /* Subtract margin from width */
-        border: 1px solid #ceced2;
-        font-family: "montserrat", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 24px;
-      }
-
-      .title_container {
-        display: flex;
-        justify-content: space-between; /* This will push the items to the edges */
-        align-items: center; /* This will align the items vertically centered */
-        width: 100%; /* Make sure it stretches to the full width of its parent */
-        margin-top: 5px;
-      }
-
-      .custom-line {
-        width: 100%; /* Ensure it spans the full width */
-        border-top: 1px solid #959595; /* Add a border-top to simulate the horizontal line */
-        align-items: center;
-        margin: 10px 0;
-        margin-bottom: 13px;
-      }
-
-      .questions_block {
-        color: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        border: 1px solid var(--border, #ceced2);
-        background: rgba(229, 229, 233, 0.4);
-        display: flex;
-        padding: 5px 12px;
-        align-items: center;
-        gap: 12px;
-        align-self: stretch;
-        margin-top: 8px;
-        margin-bottom: 5px;
-        flex-direction: column;
-      }
-
-      .inner_questions_block {
-        font-family: "roboto", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 14px;
-        color: 0A192B;
-        text-align: left;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        width: 100%;
-      }
-
-      .question_title {
-        font-family: "montserrat", sans-serif;
-        font-weight: 600;
-        font-style: normal;
-        font-size: 16px;
-        color: #0a192b;
-        text-align: left;
-        margin-top: 5px;
-        margin-bottom: 0;
-      }
-
-      .content {
-        margin-top: 12px;
-      }
-
-      .questiontype_block {
-        background: #f2d5dc;
-        color: #e42d55;
-        border: none;
-        border-radius: 10px;
-        font-size: 14px; /* Adjusted font size from 10px to 8px */
-        margin-right: 5px;
-        margin-top: -5px; /* Adjust this value to increase or decrease the spacing */
-      }
-
-      .content,
-      .block3 .ptitle {
-        margin-left: 7px; /* Added to align the text with the "Web development" button */
-      }
-
-      .questiontype_block:first-of-type {
-        margin-left: 0; /* Removes any margin before the first button to ensure alignment */
-      }
-
-      .questions_block:hover {
-        background-color: #e3e6ea !important; /* Hover state background color */
-        border: 1px solid var(--border, #e3e6ea);
-      }
-
-      .button-inactive {
-        background: #f2d5dc;
-        color: #e42d55;
-        border-color: #e3e6ea;
-
-        /* Prevents the hover effect */
-        pointer-events: none;
-      }
-
-      /*  TRENDING DISCUSSION  */
-      .block4 {
-        width: 75%;
-        margin-left: 25%;
-        position: relative;
-        background-color: #fffbfc;
-        padding: 10px 20px;
-        border-radius: 12px;
-        margin-top: 10px;
         margin-bottom: 155px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         box-sizing: border-box;
@@ -529,29 +392,39 @@
         border: 1px solid var(--border, #ceced2);
         background: rgba(229, 229, 233, 0.4);
         display: flex;
-        padding: 5px 12px;
+        padding: 12px 12px;
         align-items: center;
         gap: 12px;
         align-self: stretch;
         margin-top: 8px;
         margin-bottom: 5px;
         width: calc(
-          33.33% - 16px
+          50% - 8px
         ); /* setting the width to roughly a third minus some margin for space between */
       }
 
-      .discussion_title {
-        margin-top: 10px;
-        margin-bottom: 5px;
+      .discussion_names {
         display: flex;
         align-items: center; /* This will vertically center align the image and the text */
+        justify-content: flex-start; /* This will align the items to the left */
+        margin-top: 5px;
+        margin-bottom: 5px;
       }
 
-      /* For responsive images */
-      .inner_discussions_block img {
-        max-width: 100%;
-        height: auto;
-        display: block;
+      .title_container {
+        display: flex;
+        justify-content: space-between; /* This will push the items to the edges */
+        align-items: center; /* This will align the items vertically centered */
+        width: 100%; /* Make sure it stretches to the full width of its parent */
+        margin-top: 5px;
+      }
+
+      .custom-line {
+        width: 100%; /* Ensure it spans the full width */
+        border-top: 1px solid #959595; /* Add a border-top to simulate the horizontal line */
+        align-items: center;
+        margin: 10px 0;
+        margin-bottom: 13px;
       }
 
       .filter {
@@ -562,28 +435,57 @@
       .filter:hover {
         background-color: #dad9dd !important; /* Hover state background color */
       }
+
+      /* For responsive images */
+      .inner_discussions_block img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        align-items: center;
+        margin-top: auto;
+        border-radius: 10px;
+      }
+
+      .inner_discussions_block {
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        align-items: flex-start; /* Align children to the start of the cross axis */
+        font-weight: 400;
+        font-size: 20px;
+      }
+
+      .discussion_title {
+        font-weight: 600;
+        font-size: 22px;
+        margin-left: 0; /* Remove any margin to align with the start of the block */
+        align-self: flex-start; /* Align to the start of the main axis if needed */
+      }
     </style>
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
-        <div class="home-bar">
-          <a class="navbar-brand" routerLink="/home">
-            <img
-              src="assets/logo.png"
-              alt="Logo"
-              width="42"
-              height="24"
-              class="d-inline-block align-text-top"
-            />
-            UTCodeJest
-          </a>
-        </div>
+        <a class="navbar-brand" href="home.html">
+          <img
+            src="assets/logo.png"
+            alt="Logo"
+            width="42"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+          UTCodeJest
+        </a>
+
         <!-- Search Bar -->
         <div class="search-bar">
           <form class="nosubmit">
-            <input class="nosubmit" type="search" placeholder="Search" />
+            <input
+              class="nosubmit"
+              type="search"
+              placeholder="Search"
+              [(ngModel)]="searchQuery"
+            />
           </form>
         </div>
 
@@ -604,29 +506,27 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" routerLink="/questions">Questions</a>
+              <a class="nav-link" href="Question.html">Questions</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLinkActive="active" routerLink="/forum"
-                >Forum</a
+              <button
+                class="nav-link-button"
+                href="Forum_page.html"
+                style="font-weight: 600"
               >
+                Forum
+              </button>
             </li>
-            <li class="nav-item">
-              <a
-                class="nav-profile"
-                routerLinkActive="active"
-                routerLink="/profile"
-              >
-                <img
-                  src="assets/profile.png"
-                  alt="profile"
-                  width="30"
-                  height="30"
-                  class="d-inline-block align-text-top"
-                  routerLink="/profile"
-                />
-              </a>
-            </li>
+
+            <a class="nav-profile" routerLink="/profile">
+              <img
+                src="assets/profile.png"
+                alt="profile"
+                width="30"
+                height="30"
+                class="d-inline-block align-text-top"
+              />
+            </a>
           </ul>
         </div>
       </div>
@@ -637,33 +537,48 @@
       <div class="block float-child" style="position: fixed">
         <div class="title_container">MY UPDATES</div>
         <hr />
-
         <div class="inner-block">
-          <h3>Questions I Asked</h3>
+          Questions I Asked
           <button class="update_block btn btn-light mb-2">
             <img
               src="assets/red_dot.png"
               width="10"
               height="10"
-              style="vertical-align: middle; margin-right: 5px"
+              style="align-items: left; margin-top: 5px"
             />
-            <span style="text-align: left; font-weight: 600"
-              >Problems with num()</span
+            <p
+              style="
+                text-align: left;
+                font-weight: 600;
+                margin-top: 5px;
+                margin-bottom: 5px;
+              "
             >
+              Problems with num()
+            </p>
             <p class="ptitle">Asked 3 days ago . 3 new responses</p>
           </button>
+
           <button class="update_block btn btn-light mb-2">
             <img
               src="assets/red_dot.png"
               width="10"
               height="10"
-              style="vertical-align: middle; margin-right: 5px"
+              style="float: left; margin-top: 5px"
             />
-            <span style="text-align: left; font-weight: 600"
-              >Problems with num()</span
+            <p
+              style="
+                text-align: left;
+                font-weight: 600;
+                margin-top: 5px;
+                margin-bottom: 5px;
+              "
             >
+              Problems with num()
+            </p>
             <p class="ptitle">Asked 3 days ago . 3 new responses</p>
           </button>
+          <span class="sm"></span>
           <button class="btn btn-show_more show-more-btn">
             Show more
             <img
@@ -674,36 +589,54 @@
             />
           </button>
         </div>
-
         <hr />
 
         <div class="inner-block">
-          <h3>Questions I Followed</h3>
+          Questions I Followed
           <button class="update_block btn btn-light mb-2">
             <img
               src="assets/red_dot.png"
               width="10"
               height="10"
-              style="vertical-align: middle; margin-right: 5px"
+              style="align-items: left; margin-top: 5px"
             />
-            <span style="text-align: left; font-weight: 600"
-              >Problems with num()</span
+            <p
+              style="
+                text-align: left;
+                font-weight: 600;
+                margin-top: 5px;
+                margin-bottom: 5px;
+              "
             >
+              Problems with num()
+            </p>
             <p class="ptitle">Asked 3 days ago . 3 new responses</p>
           </button>
+
           <button class="update_block btn btn-light mb-2">
             <img
               src="assets/red_dot.png"
               width="10"
               height="10"
-              style="vertical-align: middle; margin-right: 5px"
+              style="float: left; margin-top: 5px"
             />
-            <span style="text-align: left; font-weight: 600"
-              >Problems with num()</span
+            <p
+              style="
+                text-align: left;
+                font-weight: 600;
+                margin-top: 5px;
+                margin-bottom: 5px;
+              "
             >
+              Problems with num()
+            </p>
             <p class="ptitle">Asked 3 days ago . 3 new responses</p>
           </button>
-          <button class="btn btn-show_more show-more-btn">
+          <span class="sm"></span>
+          <button
+            class="btn btn-show_more show-more-btn"
+            style="margin-bottom: 0px"
+          >
             Show more
             <img
               src="assets/showmore-Icon.png"
@@ -716,116 +649,8 @@
       </div>
 
       <div class="block2 float-child">
-        <img src="assets/profile.png" alt="profile" width="30" height="30" />
-
-        <button class="post_block btn btn-light mb-2">
-          <img
-            src="assets/help.png"
-            alt="Ask"
-            width="15"
-            height="15"
-            class="d-inline-block align-center"
-            style="margin-right: 5px"
-          />
-          Ask a Question
-        </button>
-        <button class="post_block btn btn-light mb-2">
-          <img
-            src="assets/write.png"
-            alt="Create"
-            width="15"
-            height="15"
-            class="d-inline-block align-center"
-            style="margin-right: 5px"
-          />
-          Create a Discussion
-        </button>
-      </div>
-
-      <div class="block3 float-child">
         <div class="title_container">
-          TOP QUESTIONS
-          <button
-            class="filter btn btn-light"
-            style="font-size: 14px; border-radius: 10px"
-          >
-            View All
-          </button>
-        </div>
-        <hr class="custom-line" />
-        <a class="questions_block btn" href="#" role="button">
-          <div class="inner_questions_block">
-            <div class="question_title">
-              <img src="assets/david.png" width="30" height="30" />
-              <h5 style="margin-left: 5px">Problems with num()</h5>
-            </div>
-            <p class="content">
-              I faced problems in adding num() to my sorting function.
-            </p>
-            <button
-              class="questiontype_block btn btn-light mb-2 button-inactive"
-            >
-              Web development
-            </button>
-            <button
-              class="questiontype_block btn btn-light mb-2 button-inactive"
-            >
-              Bootstrap
-            </button>
-            <p class="ptitle">Asked 3 days ago</p>
-          </div>
-        </a>
-
-        <a class="questions_block btn" href="#" role="button">
-          <div class="inner_questions_block">
-            <div class="question_title">
-              <img src="assets/profile3.png" width="30" height="30" />
-              <h5 style="margin-left: 5px">Problems with num()</h5>
-            </div>
-            <p class="content">
-              I faced problems in adding num() to my sorting function.
-            </p>
-            <button
-              class="questiontype_block btn btn-light mb-2 button-inactive"
-            >
-              Web development
-            </button>
-            <button
-              class="questiontype_block btn btn-light mb-2 button-inactive"
-            >
-              Bootstrap
-            </button>
-            <p class="ptitle">Asked 3 days ago</p>
-          </div>
-        </a>
-
-        <a class="questions_block btn" href="#" role="button">
-          <div class="inner_questions_block">
-            <div class="question_title">
-              <img src="assets/profile3.png" width="30" height="30" />
-              <h5 style="margin-left: 5px">Problems with num()</h5>
-            </div>
-            <p class="content">
-              I faced problems in adding num() to my sorting function.
-            </p>
-            <button
-              class="questiontype_block btn btn-light mb-2 button-inactive"
-            >
-              Web development
-            </button>
-            <button
-              class="questiontype_block btn btn-light mb-2 button-inactive"
-            >
-              Bootstrap
-            </button>
-            <p class="ptitle">Asked 3 days ago</p>
-          </div>
-        </a>
-      </div>
-
-      <div class="block4 float-child">
-        <div class="title_container">
-          TRENDING DISCUSSIONS
+          ALL DISCUSSIONS
           <button
             class="filter btn btn-light"
             style="font-size: 14px; border-radius: 10px"
@@ -839,32 +664,129 @@
             <img
               src="assets/bootstrap.png"
               alt="Logo"
-              width="304"
-              height="118"
+              width="500"
+              height="197"
+              style="margin-bottom: 8px"
             />
-            <div class="discussion_title">
-              <img src="assets/profile3.png" width="30" height="30" />
-              <h5 style="margin-left: 5px">Bootstrap Alternatives 2023</h5>
+            <h5 class="discussion_title" style="margin-left: 5px">
+              Bootstrap Alternatives 2023
+            </h5>
+            <div class="discussion_names">
+              <img
+                src="assets/profile3.png"
+                width="40"
+                height="40"
+                style="margin-right: 10px"
+              />Eren Jaeger
             </div>
           </div>
         </button>
 
         <button class="discussions_block btn btn-light mb-2">
           <div class="inner_discussions_block">
-            <img src="assets/amazon.png" alt="Logo" width="304" height="118" />
-            <div class="discussion_title">
-              <img src="assets/profile4.png" width="30" height="30" />
-              <h5 style="margin-left: 5px">Amazon Job Openings</h5>
+            <img
+              src="assets/amazon.png"
+              alt="Logo"
+              width="500"
+              height="197"
+              style="margin-bottom: 8px"
+            />
+            <h5 class="discussion_title" style="margin-left: 5px">amazon</h5>
+            <div class="discussion_names">
+              <img
+                src="assets/david.png"
+                width="40"
+                height="40"
+                style="margin-right: 10px"
+              />David Chang
             </div>
           </div>
         </button>
 
         <button class="discussions_block btn btn-light mb-2">
           <div class="inner_discussions_block">
-            <img src="assets/css.png" alt="Logo" width="304" height="118" />
-            <div class="discussion_title">
-              <img src="assets/profile1.png" width="30" height="30" />
-              <h5 style="margin-left: 5px">VS CODE HTML & CSS Tips</h5>
+            <img
+              src="assets/bootstrap.png"
+              alt="Logo"
+              width="500"
+              height="197"
+              style="margin-bottom: 8px"
+            />
+            <h5 class="discussion_title" style="margin-left: 5px">
+              Bootstrap Alternatives 2023
+            </h5>
+            <div class="discussion_names">
+              <img
+                src="assets/profile3.png"
+                width="40"
+                height="40"
+                style="margin-right: 10px"
+              />Eren Jaeger
+            </div>
+          </div>
+        </button>
+
+        <button class="discussions_block btn btn-light mb-2">
+          <div class="inner_discussions_block">
+            <img
+              src="assets/amazon.png"
+              alt="Logo"
+              width="500"
+              height="197"
+              style="margin-bottom: 8px"
+            />
+            <h5 class="discussion_title" style="margin-left: 5px">amazon</h5>
+            <div class="discussion_names">
+              <img
+                src="assets/david.png"
+                width="40"
+                height="40"
+                style="margin-right: 10px"
+              />David Chang
+            </div>
+          </div>
+        </button>
+
+        <button class="discussions_block btn btn-light mb-2">
+          <div class="inner_discussions_block">
+            <img
+              src="assets/bootstrap.png"
+              alt="Logo"
+              width="500"
+              height="197"
+              style="margin-bottom: 8px"
+            />
+            <h5 class="discussion_title" style="margin-left: 5px">
+              Bootstrap Alternatives 2023
+            </h5>
+            <div class="discussion_names">
+              <img
+                src="assets/profile3.png"
+                width="40"
+                height="40"
+                style="margin-right: 10px"
+              />Eren Jaeger
+            </div>
+          </div>
+        </button>
+
+        <button class="discussions_block btn btn-light mb-2">
+          <div class="inner_discussions_block">
+            <img
+              src="assets/amazon.png"
+              alt="Logo"
+              width="500"
+              height="197"
+              style="margin-bottom: 8px"
+            />
+            <h5 class="discussion_title" style="margin-left: 5px">amazon</h5>
+            <div class="discussion_names">
+              <img
+                src="assets/david.png"
+                width="40"
+                height="40"
+                style="margin-right: 10px"
+              />David Chang
             </div>
           </div>
         </button>
