@@ -339,17 +339,18 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="home.html">
-          <img
-            src="assets/logo.png"
-            alt="Logo"
-            width="42"
-            height="24"
-            class="d-inline-block align-text-top"
-          />
-          UTCodeJest
-        </a>
-
+        <div>
+          <a class="navbar-brand" routerLink="/home">
+            <img
+              src="assets/logo.png"
+              alt="Logo"
+              width="42"
+              height="24"
+              class="d-inline-block align-text-top"
+            />
+            UTCodeJest
+          </a>
+        </div>
         <!-- Search Bar -->
         <div class="search-bar">
           <form class="nosubmit">
@@ -366,13 +367,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="Question.html">Questions</a>
+              <a class="nav-link" routerLink="/question">Questions</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Forum_page.html">Forum</a>
+              <a class="nav-link" routerLink="/forum">Forum</a>
             </li>
 
-            <a class="nav-profile" href="Profile.html">
+            <a class="nav-profile" routerLink="/profile">
               <img
                 src="assets/profile.png"
                 alt="profile"
