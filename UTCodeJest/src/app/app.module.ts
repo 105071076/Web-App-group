@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { ForumComponent } from './forum/forum.component';
 import { ProfileComponent } from './profile/profile.component';
 import {QuestionComponent } from './question/question.component'
+import { NavbarComponent } from './navbar/navbar.component'
+import { QuestionDetailComponent } from './question-detail/question-detail.component'
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import {QuestionComponent } from './question/question.component'
     LoginComponent,
     ForumComponent,
     ProfileComponent,
-    QuestionComponent
+    QuestionComponent,
+    NavbarComponent,
+    QuestionDetailComponent
   ],
   imports: [
     BrowserModule,

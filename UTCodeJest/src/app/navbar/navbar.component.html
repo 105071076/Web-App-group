@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <div>
+      <a class="navbar-brand" routerLink="/home">
+        <img
+          src="assets/logo.png"
+          alt="Logo"
+          width="42"
+          height="24"
+          class="d-inline-block align-text-top"
+        />
+        UTCodeJest
+      </a>
+    </div>
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <form class="nosubmit">
+        <input
+          class="nosubmit"
+          type="search"
+          placeholder="Search"
+          [(ngModel)]="profileSearchQuery"
+        />
+      </form>
+    </div>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/question">Questions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/forum">Forum</a>
+        </li>
+
+        <a class="nav-profile" routerLink="/profile">
+          <img
+            src="assets/profile.png"
+            alt="profile"
+            width="30"
+            height="30"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+      </ul>
+    </div>
+  </div>
+</nav>

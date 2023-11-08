@@ -36,7 +36,6 @@
 
       /* NAV BAR */
       body {
-        margin-top: 50px;
         background-color: #ededf0;
       }
 
@@ -562,114 +561,64 @@
       }
 
       .custom-line2 {
-            width: 100%; /* Ensure it spans the full width */
-            border-top: 1px solid #959595;  /* Add a border-top to simulate the horizontal line */
-            align-items: center;
-            margin: 10px 0;
-            margin-bottom: 7px;
-        }
+        width: 100%; /* Ensure it spans the full width */
+        border-top: 1px solid #959595; /* Add a border-top to simulate the horizontal line */
+        align-items: center;
+        margin: 10px 0;
+        margin-bottom: 7px;
+      }
     </style>
   </head>
-
+  <app-navbar></app-navbar>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-      <div class="container-fluid">
-        <div class="home-bar">
-          <a class="navbar-brand" routerLink="/home">
-            <img
-              src="assets/logo.png"
-              alt="Logo"
-              width="42"
-              height="24"
-              class="d-inline-block align-text-top"
-            />
-            UTCodeJest
-          </a>
-        </div>
-        <!-- Search Bar -->
-        <div class="search-bar">
-          <form class="nosubmit">
-            <input class="nosubmit" type="search" placeholder="Search" />
-          </form>
-        </div>
-
-        <!-- Toggler button for mobile view -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/questions">Questions</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLinkActive="active" routerLink="/forum"
-                >Forum</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-profile"
-                routerLinkActive="active"
-                routerLink="/profile"
-              >
-                <img
-                  src="assets/profile.png"
-                  alt="profile"
-                  width="30"
-                  height="30"
-                  class="d-inline-block align-text-top"
-                  routerLink="/profile"
-                />
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
     <div class="float-container">
+
       <!--My Updates-->
       <div class="block float-child" style="position: fixed">
         <div class="title_container">MY UPDATES</div>
         <hr />
-
         <div class="inner-block">
-          <h3>Questions I Asked</h3>
+          Questions I Asked
           <button class="update_block btn btn-light mb-2">
             <img
               src="assets/red_dot.png"
               width="10"
               height="10"
-              style="vertical-align: middle; margin-right: 5px"
+              style="align-items: left; margin-top: 5px"
             />
-            <span style="text-align: left; font-weight: 600"
-              >Problems with num()</span
+            <p
+              style="
+                text-align: left;
+                font-weight: 600;
+                margin-top: 5px;
+                margin-bottom: 5px;
+              "
             >
+              Problems with num()
+            </p>
             <p class="ptitle">Asked 3 days ago . 3 new responses</p>
           </button>
+
           <button class="update_block btn btn-light mb-2">
             <img
               src="assets/red_dot.png"
               width="10"
               height="10"
-              style="vertical-align: middle; margin-right: 5px"
+              style="float: left; margin-top: 5px"
             />
-            <span style="text-align: left; font-weight: 600"
-              >Problems with num()</span
+            <p
+              style="
+                text-align: left;
+                font-weight: 600;
+                margin-top: 5px;
+                margin-bottom: 5px;
+              "
             >
+              Problems with num()
+            </p>
             <p class="ptitle">Asked 3 days ago . 3 new responses</p>
           </button>
+          <span class="sm"></span>
           <button class="btn btn-show_more show-more-btn">
             Show more
             <img
@@ -680,36 +629,54 @@
             />
           </button>
         </div>
-
         <hr />
 
         <div class="inner-block">
-          <h3>Questions I Followed</h3>
+          Questions I Followed
           <button class="update_block btn btn-light mb-2">
             <img
               src="assets/red_dot.png"
               width="10"
               height="10"
-              style="vertical-align: middle; margin-right: 5px"
+              style="align-items: left; margin-top: 5px"
             />
-            <span style="text-align: left; font-weight: 600"
-              >Problems with num()</span
+            <p
+              style="
+                text-align: left;
+                font-weight: 600;
+                margin-top: 5px;
+                margin-bottom: 5px;
+              "
             >
+              Problems with num()
+            </p>
             <p class="ptitle">Asked 3 days ago . 3 new responses</p>
           </button>
+
           <button class="update_block btn btn-light mb-2">
             <img
               src="assets/red_dot.png"
               width="10"
               height="10"
-              style="vertical-align: middle; margin-right: 5px"
+              style="float: left; margin-top: 5px"
             />
-            <span style="text-align: left; font-weight: 600"
-              >Problems with num()</span
+            <p
+              style="
+                text-align: left;
+                font-weight: 600;
+                margin-top: 5px;
+                margin-bottom: 5px;
+              "
             >
+              Problems with num()
+            </p>
             <p class="ptitle">Asked 3 days ago . 3 new responses</p>
           </button>
-          <button class="btn btn-show_more show-more-btn">
+          <span class="sm"></span>
+          <button
+            class="btn btn-show_more show-more-btn"
+            style="margin-bottom: 0px"
+          >
             Show more
             <img
               src="assets/showmore-Icon.png"
@@ -720,6 +687,11 @@
           </button>
         </div>
       </div>
+
+
+
+
+
 
       <div class="block2 float-child">
         <img src="assets/profile.png" alt="profile" width="30" height="30" />
@@ -845,7 +817,7 @@
             <img
               src="assets/bootstrap.png"
               alt="Logo"
-              width="320"
+              width="500"
               height="118"
             />
             <div class="discussion_title">
@@ -857,7 +829,7 @@
 
         <button class="discussions_block btn btn-light mb-2">
           <div class="inner_discussions_block">
-            <img src="assets/amazon.png" alt="Logo" width="320" height="118" />
+            <img src="assets/amazon.png" alt="Logo" width="500" height="118" />
             <div class="discussion_title">
               <img src="assets/profile4.png" width="30" height="30" />
               <h5 style="margin-left: 5px">Amazon Job Openings</h5>
@@ -867,7 +839,7 @@
 
         <button class="discussions_block btn btn-light mb-2">
           <div class="inner_discussions_block">
-            <img src="assets/css.png" alt="Logo" width="340" height="150" />
+            <img src="assets/css.png" alt="Logo" width="500" height="150" />
             <div class="discussion_title">
               <img src="assets/profile1.png" width="30" height="30" />
               <h5 style="margin-left: 5px">VS CODE HTML & CSS Tips</h5>
