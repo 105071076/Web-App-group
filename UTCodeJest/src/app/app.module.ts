@@ -25,8 +25,7 @@ import { QuestionDetailComponent } from './question-detail/question-detail.compo
     ForumComponent,
     ProfileComponent,
     QuestionComponent,
-    NavbarComponent
-    QuestionComponent,
+    NavbarComponent,
     QuestionDetailComponent
   ],
   imports: [
