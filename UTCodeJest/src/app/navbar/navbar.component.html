@@ -28,10 +28,18 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/question">Questions</a>
+          <a
+            class="nav-link"
+            (click)="onClickRoute()"
+            [ngClass]="{ selected: questionActive }"
+            routerLink="/question"
+            >Questions</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/forum">Forum</a>
+          <a class="nav-link" (click)="onClickRoute()" routerLink="/forum"
+            >Forum</a
+          >
         </li>
 
         <a class="nav-profile" routerLink="/profile">
