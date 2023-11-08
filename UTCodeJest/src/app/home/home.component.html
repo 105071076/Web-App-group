@@ -893,11 +893,73 @@
         </div>
 
       </div>
-      <button class="post_block btn btn-light mb-2">
+      <button id="CreateDiscussion" class="post_block btn btn-light mb-2" (click)="clickDiscussion()">
         <img src="assets/write.png" alt="Create" width="15" height="15" class="d-inline-block align-center"
           style="margin-right: 5px" />
         Create a Discussion
       </button>
+
+      <div id="CreateDiscussionModal" class="modal hidden">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close" (click)="closeDiscussion()"> <img src="assets/remove-circle.png" /></span>
+
+            <div>Create a discussion</div>
+
+          </div>
+          <div class="modal-body">
+            <div class="form-title">
+              <div>
+                Title</div>
+              <div class="form-inputbox">
+                <div>
+                  Title</div>
+              </div>
+            </div>
+            <div class="form-title">
+              <div>
+                Description</div>
+              <div class="form-inputbox">
+                <div>
+                  Add details to your question</div>
+              </div>
+            </div>
+            <div
+              style="display: flex; width: 100%; height: 100%; flex-direction: column; justify-content: center; align-items: flex-start; gap: 12px; align-self: stretch;">
+              <button class="filter btn btn-light" style="font-size: 14px; border-radius: 10px"> <img
+                  src="assets/post add.png" />
+                Attach files
+              </button>
+
+            </div>
+            <div
+              style="display: flex; width: 100%; height: 100%; flex-direction: column; justify-content: center; align-items: flex-start; gap: 12px; align-self: stretch;">
+              <button class="filter btn btn-light" style="font-size: 14px; border-radius: 10px"> <img
+                  src="assets/image-rectangle.png" />
+                Attach media
+              </button>
+
+            </div>
+
+            <div class="form-title">
+              <div>
+                Tags</div>
+              <div class="form-addtag">
+                <div><img src="assets/search01.png" />
+                  Add tags</div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="filter btn btn-light" style="font-size: 14px; border-radius: 10px">
+              Post
+            </button>
+          </div>
+        </div>
+
+      </div>
     </div>
 
     <div class="block3 float-child">

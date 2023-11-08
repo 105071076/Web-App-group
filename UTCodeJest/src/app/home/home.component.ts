@@ -34,4 +34,14 @@ export class HomeComponent implements OnInit {
     this.modal.style.display = "none";
 
   }
+
+  clickDiscussion() {
+    this.modal = document.getElementById("CreateDiscussionModal");
+    this.modal.style.display = "block";
+  }
+
+  closeDiscussion() {
+    this.modal.style.display = "none";
+
+  }
 }
