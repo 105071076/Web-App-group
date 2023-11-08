@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
 
 
-  clickQuestions() {
+  clickQuestion() {
     this.modal = document.getElementById("AskQuestionModal");
     this.modal.style.display = "block";
   }
