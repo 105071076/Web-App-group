@@ -102,8 +102,8 @@ export class RegisterComponent {
   }
 
   closeErrorModal(){
-    $('#successModal').modal('hide');
-    this.errorMessage = ""
+    $('#errorModal').modal('hide');
+    
   }
   
 }
