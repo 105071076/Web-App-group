@@ -227,9 +227,7 @@
       overflow-x: hidden;
     }
 
-    <!-- MY UPDATES-->
-    
-    .float-container {
+    < !-- MY UPDATES-->.float-container {
       display: flex;
       position: relative;
       flex-direction: row;
@@ -839,7 +837,7 @@
         <!-- Modal content -->
         <div class="modal-content">
           <div class="modal-header">
-            <span class="close"> <img src="assets/remove-circle.png" /></span>
+            <span class="close" (click)="closeQuestions()"> <img src="assets/remove-circle.png" /></span>
 
             <div>Ask a question</div>
 
@@ -1033,7 +1031,7 @@
 
 
     // When the user clicks on the button, open the modal
-   
+
 
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
