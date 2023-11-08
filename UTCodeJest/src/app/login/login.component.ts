@@ -24,7 +24,7 @@ export class LoginComponent {
       password: this.password  // Assuming password is the password
     };
     
-    this.http.post('http://localhost:5000/api/auth', userData)
+    this.http.post('http://localhost:5001/api/auth', userData)
       .subscribe(response => {
         console.log(response);
         this.showSuccessModal();

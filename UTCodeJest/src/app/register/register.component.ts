@@ -43,7 +43,7 @@ export class RegisterComponent {
     
 
 
-    this.http.post('http://localhost:5000/api/users', userData)
+    this.http.post('http://localhost:5001/api/users', userData)
       .subscribe(response => {
         console.log(response);
         // Handle success - maybe navigate the user or display a success message
