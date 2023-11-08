@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   // Properties for two-way data binding
   // Replace 'modelName' with the appropriate variable names
   modelName: string = '';
+  modal: any;
 
   constructor() { }
 
@@ -22,4 +23,10 @@ export class HomeComponent implements OnInit {
     // TODO: Implement API call logic here
   }
 
+
+
+  clickQuestions () {
+    this.modal = document.getElementById("AskQuestionModal");
+    this.modal.style.display = "block";
+  }
 }

@@ -227,7 +227,9 @@
       overflow-x: hidden;
     }
 
-    < !-- MY UPDATES-->.float-container {
+    <!-- MY UPDATES-->
+    
+    .float-container {
       display: flex;
       position: relative;
       flex-direction: row;
@@ -825,7 +827,7 @@
     <div class="block2 float-child">
       <img src="assets/profile.png" alt="profile" width="30" height="30" />
 
-      <button id="AskQuestion" class="post_block btn btn-light mb-2">
+      <button id="AskQuestion" (click)="clickQuestions()" class="post_block btn btn-light mb-2">
         <img src="assets/help.png" alt="Ask" width="15" height="15" class="d-inline-block align-center"
           style="margin-right: 5px" />
         Ask a Question
@@ -1024,16 +1026,14 @@
     var modal = document.getElementById("AskQuestionModal");
 
     // Get the button that opens the modal
-    var btn = document.getElementById("AskQuestion");
+    //var btn = document.getElementById("AskQuestion");
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
 
     // When the user clicks on the button, open the modal
-    btn.onclick = function () {
-      modal.style.display = "block";
-    }
+   
 
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
