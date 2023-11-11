@@ -12,7 +12,8 @@ import { ForumComponent } from './forum/forum.component';
 import { ProfileComponent } from './profile/profile.component';
 import {QuestionComponent } from './question/question.component'
 import { NavbarComponent } from './navbar/navbar.component'
-import { QuestionDetailComponent } from './question-detail/question-detail.component'
+import { QuestionDetailComponent } from './question-detail/question-detail.component';
+import { ForumDetailComponent } from './forum-detail/forum-detail.component'
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { QuestionDetailComponent } from './question-detail/question-detail.compo
     ProfileComponent,
     QuestionComponent,
     NavbarComponent,
-    QuestionDetailComponent
+    QuestionDetailComponent,
+    ForumDetailComponent
   ],
   imports: [
     BrowserModule,
