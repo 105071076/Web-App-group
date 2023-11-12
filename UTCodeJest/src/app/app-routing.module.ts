@@ -20,7 +20,7 @@ const routes: Routes = [
    {path: 'profile', component: ProfileComponent},
    {path: 'question', component: QuestionComponent},
    {path: 'question-detail', component: QuestionDetailComponent},
-   {path: 'forum-detail', component:  ForumDetailComponent }
+   {path: 'forum-detail', component: ForumDetailComponent }
 ];
 
 @NgModule({
