@@ -1019,21 +1019,18 @@
                   Add details to your question</div>
               </div>
             </div>
-            <div
-              style="display: flex; width: 100%; height: 100%; flex-direction: column; justify-content: center; align-items: flex-start; gap: 12px; align-self: stretch;">
-              <button class="filter btn btn-light" style="font-size: 14px; border-radius: 10px"> <img
-                  src="assets/post add.png" />
-                Attach files
-              </button>
+            <div>
+              <label for="file-upload" class="file-upload filter btn btn-light">Attach files<img
+                  src="assets/post add.png" /><input id="file-upload" type="file" (change)="onFileChange($event)"
+                  multiple style="display:none;"></label>
+
 
             </div>
-            <div
-              style="display: flex; width: 100%; height: 100%; flex-direction: column; justify-content: center; align-items: flex-start; gap: 12px; align-self: stretch;">
-              <button class="filter btn btn-light" style="font-size: 14px; border-radius: 10px"> <img
-                  src="assets/image-rectangle.png" type="file" (change)="onFileChange($event)" multiple />
-                Attach media
-              </button>
-
+            <div>
+              <label for="media-upload" class="media-upload filter btn btn-light">Attach media<img
+                  src="assets/image-rectangle.png" />
+                <input id="media-upload" type="file" (change)="onMediaChange($event)" accept="image/*,video/*"
+                  multiple></label>
             </div>
 
             <div class="form-title">
