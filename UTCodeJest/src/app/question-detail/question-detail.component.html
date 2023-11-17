@@ -838,9 +838,10 @@
                     Comments
                     <div class="makecomment">
                         <img src="assets/profile.png" width="30" height="30">
-                        <form class="submit">
-                            <input class="submit" type="text" placeholder="Add your comments">
-                        </form>
+                        <form (ngSubmit)="addComment()" class="submit">
+                            <input [(ngModel)]="userComment" name="comment" class="submit" type="text" placeholder="Add your comments">
+                            <button type="submit">Post</button>
+                          </form>
                     </div>
                 </div>
                 <button class="filter btn btn-light">Most Popular
@@ -848,38 +849,18 @@
                 </button>
             </div>
             
-            <div style="margin-top: -5px;">
-                <div class= "othercomment">
-                    <img src="assets/profile4.png" width="30" height="30">
+            <!-- Dynamic comments section -->
+            <div *ngFor="let comment of comments; let i = index">
+                <div class="othercomment">
+                <img src="assets/profile.png" width="30" height="30">
                 </div>
-                <a class="comments_block2 btn button-inactive2" href="#" role="button">
-                    <div class="inner_comments_block2">
-                        <p class="content">You can try to use the blahblah  to blahblahblah, then it might work.</p>
-                        <p class="ptitle2">Asked 3 days ago</p>
-                    </div>
-                </a>
-                <div class="button-container">
-                    <button class="like btn">Like</button>
-                    <button class="reply btn">Reply</button>
+                <div class="comments_block2 btn button-inactive2" role="button">
+                <div class="inner_comments_block2">
+                    <p class="content">{{ comment }}</p>
+                    <p class="ptitle2">Posted {{ comments.length - i }} min ago</p> <!-- Example to show comment age -->
+                </div>
                 </div>
             </div>
-
-            <div style="margin-top: -5px;">
-                <div class= "othercomment">
-                    <img src="assets/profile4.png" width="30" height="30">
-                </div>
-                <a class="comments_block2 btn button-inactive2" href="#" role="button">
-                    <div class="inner_comments_block2">
-                        <p class="content">You can try to use the blahblah  to blahblahblah, then it might work.</p>
-                        <p class="ptitle2">Asked 3 days ago</p>
-                    </div>
-                </a>
-                <div class="button-container">
-                    <button class="like btn">Like</button>
-                    <button class="reply btn">Reply</button>
-                </div>
-            </div>
-
 
 
 
