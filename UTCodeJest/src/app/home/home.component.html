@@ -227,9 +227,7 @@
       overflow-x: hidden;
     }
 
-    <!-- MY UPDATES-->
-    
-    .float-container {
+    < !-- MY UPDATES-->.float-container {
       display: flex;
       position: relative;
       flex-direction: row;
@@ -698,6 +696,7 @@
 
     .form-inputbox {
       display: flex;
+      width: 928px;
       padding: 8px 12px;
       align-items: center;
       align-self: stretch;
@@ -714,6 +713,8 @@
 
     .form-addtag {
       display: flex;
+      width: 928px;
+
       height: 48px;
       padding: 8px 12px;
       align-items: center;
@@ -745,6 +746,65 @@
 
     .hidden {
       display: none;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: flex;
+      width: 928px;
+      padding: 8px 12px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 12px;
+      align-self: stretch;
+      border-radius: 12px;
+      border: 1px solid var(--border, #CECED2);
+      background: #FFF;
+    }
+
+    .tag-content {
+      display: flex;
+      width: 928px;
+      align-items: center;
+      gap: 12px;
+
+    }
+
+    .tag {
+      display: flex;
+
+      height: 32px;
+      padding: 4px 8px;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      border-radius: 6px;
+      background: #E5E5E9;
+      /* base */
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10);
+      color: var(--Dark-color, #0A192B);
+      font-family: Lato;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: -0.42px;
+
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .file-upload {
+      style="font-size: 14px; 
+ border-radius: 10px";
+
     }
   </style>
 </head>
@@ -842,7 +902,7 @@
       </button>
 
       <!-- The Modal -->
-      <div id="AskQuestionModal" class="modal hidden">
+      <div id="AskQuestionModal" class="modal hidden ">
 
         <!-- Modal content -->
         <div class="modal-content">
@@ -857,53 +917,66 @@
 
           </div>
           <div class="modal-body">
-            <div class="form-title">
-              <div>
-                Title</div>
-              <div class="form-inputbox">
-                <div>
-                  Title</div>
+            <form (ngSubmit)="submitPost()">
+              <!-- Title Input -->
+              <div class="form-title">
+                <label for="title">Title</label>
+                <input id="title" type="text" class="form-inputbox" [(ngModel)]="postTitle" name="title" required>
               </div>
-            </div>
-            <div class="form-title">
-              <div>
-                Description</div>
-              <div class="form-inputbox">
-                <div>
-                  Add details to your question</div>
+
+              <!-- Description Textarea -->
+              <div class="form-title">
+                <label for="description">Description</label>
+                <textarea id="description" class="form-inputbox" [(ngModel)]="postDescription" name="description"
+                  required></textarea>
               </div>
-            </div>
-            <div
-              style="display: flex; width: 100%; height: 100%; flex-direction: column; justify-content: center; align-items: flex-start; gap: 12px; align-self: stretch;">
-              <button class="filter btn btn-light" style="font-size: 14px; border-radius: 10px"> <img
-                  src="assets/post add.png" />
-                Attach files
-              </button>
 
-            </div>
-            <div
-              style="display: flex; width: 100%; height: 100%; flex-direction: column; justify-content: center; align-items: flex-start; gap: 12px; align-self: stretch;">
-              <button class="filter btn btn-light" style="font-size: 14px; border-radius: 10px"> <img
-                  src="assets/image-rectangle.png" />
-                Attach media
-              </button>
-
-            </div>
-
-            <div class="form-title">
+              <!-- Attach Files Button -->
               <div>
-                Tags</div>
-              <div class="form-addtag">
-                <div><img src="assets/search01.png" />
-                  Add tags</div>
+                <label for="file-upload" class="file-upload filter btn btn-light">Attach files<img
+                    src="assets/post add.png" /><input id="file-upload" type="file" (change)="onFileChange($event)"
+                    multiple style="display:none;"></label>
+
+
               </div>
-            </div>
+
+              <!-- Attach Media Button -->
+              <div>
+                <label for="media-upload" class="media-upload filter btn btn-light">Attach media<img
+                    src="assets/image-rectangle.png" />
+                  <input id="media-upload" type="file" (change)="onMediaChange($event)" accept="image/*,video/*"
+                    multiple></label>
+              </div>
+
+              <!-- Tags Input -->
+              <div class="dropdown hidden">
+                <label for="tags">Tags</label>
+                <div class="form-title">
+                  <input id="tags" type="text" (click)="myFunction()" placeholder="Add tags" class="form-addtag"
+                    [(ngModel)]="postTags" name="tags">
+                  <div id="myDropdown" class="dropdown-content hidden" *ngIf="isMenuOpened">
+                    Frequently used tags
+                    <div class="tag-content">
+                      <div class="tag">HTML</div>
+                      <div class="tag">CSS</div>
+                      <div class="tag">JavaSript</div>
+                      <div class="tag">Angular</div>
+                      <div class="tag">Python</div>
+
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="modal-footer">
+                <button type="submit" class="filter btn btn-light">Post</button>
+              </div>
+            </form>
           </div>
-          <div class="modal-footer">
-            <button class="filter btn btn-light" style="font-size: 14px; border-radius: 10px">
-              Post
-            </button>
-          </div>
+
         </div>
 
       </div>
@@ -928,7 +1001,8 @@
 
 
           </div>
-          <div class="modal-body">
+          <div class="modal-body" (ngSubmit)="submitPost()">
+
             <div class="form-title">
               <div>
                 Title</div>
@@ -945,21 +1019,18 @@
                   Add details to your question</div>
               </div>
             </div>
-            <div
-              style="display: flex; width: 100%; height: 100%; flex-direction: column; justify-content: center; align-items: flex-start; gap: 12px; align-self: stretch;">
-              <button class="filter btn btn-light" style="font-size: 14px; border-radius: 10px"> <img
-                  src="assets/post add.png" />
-                Attach files
-              </button>
+            <div>
+              <label for="file-upload" class="file-upload filter btn btn-light">Attach files<img
+                  src="assets/post add.png" /><input id="file-upload" type="file" (change)="onFileChange($event)"
+                  multiple style="display:none;"></label>
+
 
             </div>
-            <div
-              style="display: flex; width: 100%; height: 100%; flex-direction: column; justify-content: center; align-items: flex-start; gap: 12px; align-self: stretch;">
-              <button class="filter btn btn-light" style="font-size: 14px; border-radius: 10px"> <img
+            <div>
+              <label for="media-upload" class="media-upload filter btn btn-light">Attach media<img
                   src="assets/image-rectangle.png" />
-                Attach media
-              </button>
-
+                <input id="media-upload" type="file" (change)="onMediaChange($event)" accept="image/*,video/*"
+                  multiple></label>
             </div>
 
             <div class="form-title">
@@ -1056,7 +1127,7 @@
       </div>
       <hr class="custom-line2" />
       <button class="discussions_block btn btn-light mb-2">
-        <div class="inner_discussions_block">
+        <div class="inner_discussions_block" routerLink="/question-detail" role="button">
           <img src="assets/bootstrap.png" alt="Logo" width="500" height="118" />
           <div class="discussion_title">
             <img src="assets/profile3.png" width="30" height="30" />
@@ -1066,7 +1137,7 @@
       </button>
 
       <button class="discussions_block btn btn-light mb-2">
-        <div class="inner_discussions_block">
+        <div class="inner_discussions_block" routerLink="/question-detail" role="button">
           <img src="assets/amazon.png" alt="Logo" width="500" height="118" />
           <div class="discussion_title">
             <img src="assets/profile4.png" width="30" height="30" />
@@ -1076,7 +1147,7 @@
       </button>
 
       <button class="discussions_block btn btn-light mb-2">
-        <div class="inner_discussions_block">
+        <div class="inner_discussions_block" routerLink="/question-detail" role="button">
           <img src="assets/css.png" alt="Logo" width="500" height="150" />
           <div class="discussion_title">
             <img src="assets/profile1.png" width="30" height="30" />

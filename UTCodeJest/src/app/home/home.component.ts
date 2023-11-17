@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,24 +6,45 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  // Properties for two-way data binding
-  // Replace 'modelName' with the appropriate variable names
-  modelName: string = '';
+  postTitle = '';
+  postDescription = '';
+  postTags = '';
+  selectedFiles: FileList | null = null;
+  selectedMedia: FileList | null = null;
   modal: any;
+  dropdown: any;// Declare the modal property
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  // Placeholder for potential API calls in the future
-  callApi() {
-    // TODO: Implement API call logic here
+  onFileChange(event: Event) {
+    const element = event.currentTarget as HTMLInputElement;
+    let fileList: FileList | null = element.files;
+    if (fileList) {
+      this.selectedFiles = fileList;
+    }
   }
 
+  onMediaChange(event: Event) {
+    const element = event.currentTarget as HTMLInputElement;
+    let fileList: FileList | null = element.files;
+    if (fileList) {
+      this.selectedMedia = fileList;
+    }
+  }
 
+  submitPost() {
+    // Here you will handle the form submission.
+    // This typically involves preparing the data and sending it to a backend server.
 
+    console.log('Form Submission', this.postTitle, this.postDescription, this.postTags);
+    // If you have a backend server, you would send the data there.
+    // Example: this.http.post('your-backend-endpoint', { title: this.postTitle, ... });
+  }
+
+  // Existing methods for modal handling...
   clickQuestion() {
     this.modal = document.getElementById("AskQuestionModal");
     this.modal.style.display = "block";
@@ -32,7 +52,6 @@ export class HomeComponent implements OnInit {
 
   closeQuestion() {
     this.modal.style.display = "none";
-
   }
 
   clickDiscussion() {
@@ -42,6 +61,13 @@ export class HomeComponent implements OnInit {
 
   closeDiscussion() {
     this.modal.style.display = "none";
-
   }
+  isMenuOpened: boolean = false;
+  myFunction() {
+    this.dropdown = document.getElementById("myDropdown");
+    this.isMenuOpened = !this.isMenuOpened;
+  }
+  //closeDropdown() {
+  //this.dropdown.style.display = "none";
+  // }//
 }

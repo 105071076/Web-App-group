@@ -231,6 +231,13 @@
             border-radius: 9999px; 
         }
 
+        .nav-link{
+            position: relative;
+            color: #FFFFFF;
+            padding: 8px 20px; 
+
+        }
+
 
         <!--  MY UPDATES-->
         .float-container {
@@ -729,7 +736,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="home.html">
+            <a class="navbar-brand" routerLink="/home">
                 <img src="assets/logo.png" alt="Logo" width="42" height="24" class="d-inline-block align-text-top">
                 UTCodeJest
             </a>
@@ -750,13 +757,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <button class="nav-link-button" href="Question.html" style="font-weight: 600;">Question</button>
+                        <button class="nav-link"  routerLink="/question" >Question</button>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/forum">Forum</a> 
+                        <button class="nav-link-button"  routerLink="/forum" style="font-weight: 600;">Forum</button>
                     </li>
                     
-                    <a class="nav-profile" href="Profile.html">
+                    <a class="nav-profile"  routerLink="/profile">
                         <img src="assets/profile.png" alt="profile" width="30" height="30" class="d-inline-block align-text-top">
                     </a>
                 </ul>
