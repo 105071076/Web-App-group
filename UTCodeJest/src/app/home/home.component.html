@@ -857,53 +857,44 @@
 
           </div>
           <div class="modal-body">
-            <div class="form-title">
-              <div>
-                Title</div>
-              <div class="form-inputbox">
-                <div>
-                  Title</div>
+            <form (ngSubmit)="submitPost()">
+              <!-- Title Input -->
+              <div class="form-title">
+                <label for="title">Title</label>
+                <input id="title" type="text" class="form-inputbox" [(ngModel)]="postTitle" name="title" required>
               </div>
-            </div>
-            <div class="form-title">
-              <div>
-                Description</div>
-              <div class="form-inputbox">
-                <div>
-                  Add details to your question</div>
+          
+              <!-- Description Textarea -->
+              <div class="form-title">
+                <label for="description">Description</label>
+                <textarea id="description" class="form-inputbox" [(ngModel)]="postDescription" name="description" required></textarea>
               </div>
-            </div>
-            <div
-              style="display: flex; width: 100%; height: 100%; flex-direction: column; justify-content: center; align-items: flex-start; gap: 12px; align-self: stretch;">
-              <button class="filter btn btn-light" style="font-size: 14px; border-radius: 10px"> <img
-                  src="assets/post add.png" />
-                Attach files
-              </button>
-
-            </div>
-            <div
-              style="display: flex; width: 100%; height: 100%; flex-direction: column; justify-content: center; align-items: flex-start; gap: 12px; align-self: stretch;">
-              <button class="filter btn btn-light" style="font-size: 14px; border-radius: 10px"> <img
-                  src="assets/image-rectangle.png" />
-                Attach media
-              </button>
-
-            </div>
-
-            <div class="form-title">
+          
+              <!-- Attach Files Button -->
               <div>
-                Tags</div>
-              <div class="form-addtag">
-                <div><img src="assets/search01.png" />
-                  Add tags</div>
+                <label for="file-upload">Attach files</label>
+                <input id="file-upload" type="file" (change)="onFileChange($event)" multiple>
               </div>
-            </div>
+          
+              <!-- Attach Media Button -->
+              <div>
+                <label for="media-upload">Attach media</label>
+                <input id="media-upload" type="file" (change)="onMediaChange($event)" accept="image/*,video/*" multiple>
+              </div>
+          
+              <!-- Tags Input -->
+              <div class="form-title">
+                <label for="tags">Tags</label>
+                <input id="tags" type="text" class="form-addtag" [(ngModel)]="postTags" name="tags">
+              </div>
+          
+              <!-- Submit Button -->
+              <div class="modal-footer">
+                <button type="submit" class="filter btn btn-light">Post</button>
+              </div>
+            </form>
           </div>
-          <div class="modal-footer">
-            <button class="filter btn btn-light" style="font-size: 14px; border-radius: 10px">
-              Post
-            </button>
-          </div>
+          
         </div>
 
       </div>
