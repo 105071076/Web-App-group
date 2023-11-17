@@ -11,7 +11,8 @@ export class HomeComponent implements OnInit {
   postTags = '';
   selectedFiles: FileList | null = null;
   selectedMedia: FileList | null = null;
-  modal: any; // Declare the modal property
+  modal: any;
+  dropdown: any;// Declare the modal property
 
   constructor() { }
 
@@ -61,4 +62,12 @@ export class HomeComponent implements OnInit {
   closeDiscussion() {
     this.modal.style.display = "none";
   }
+  isMenuOpened: boolean = false;
+  myFunction() {
+    this.dropdown = document.getElementById("myDropdown");
+    this.isMenuOpened = !this.isMenuOpened;
+  }
+  //closeDropdown() {
+  //this.dropdown.style.display = "none";
+  // }//
 }
