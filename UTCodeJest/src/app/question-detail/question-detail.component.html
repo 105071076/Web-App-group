@@ -771,7 +771,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="home.html">
+            <a class="navbar-brand" routerLink="/home">
                 <img src="assets/logo.png" alt="Logo" width="42" height="24" class="d-inline-block align-text-top">
                 UTCodeJest
             </a>
@@ -794,7 +794,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <button class="nav-link-button" href="Question.html" style="font-weight: 600;">Question</button>
+                        <button class="nav-link-button" routerLink="/question"style="font-weight: 600;">Question</button>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" routerLink="/forum">Forum</a>
@@ -891,45 +891,27 @@
                     Comments
                     <div class="makecomment">
                         <img src="assets/profile.png" width="30" height="30">
-                        <form class="submit">
-                            <input class="submit" type="text" placeholder="Add your comments">
-                        </form>
+                        <form (ngSubmit)="addComment()" class="submit">
+                            <input [(ngModel)]="userComment" name="comment" class="submit" type="text" placeholder="Add your comments">
+                            <button type="submit">Post</button>
+                          </form>
                     </div>
                 </div>
                 <button class="filter btn btn-light">Most Popular
                     <img src="assets/showmore-Icon.png" alt="Logo" width="24" height="24" style="margin-left: 8px;">
                 </button>
             </div>
-
-            <div style="margin-top: -5px;">
+            
+            <!-- Dynamic comments section -->
+            <div *ngFor="let comment of comments; let i = index">
                 <div class="othercomment">
-                    <img src="assets/profile4.png" width="30" height="30">
+                <img src="assets/profile.png" width="30" height="30">
                 </div>
-                <a class="comments_block2 btn button-inactive2" href="#" role="button">
-                    <div class="inner_comments_block2">
-                        <p class="content">You can try to use the blahblah to blahblahblah, then it might work.</p>
-                        <p class="ptitle2">Asked 3 days ago</p>
-                    </div>
-                </a>
-                <div class="button-container">
-                    <button class="like btn">Like</button>
-                    <button class="reply btn">Reply</button>
+                <div class="comments_block2 btn button-inactive2" role="button">
+                <div class="inner_comments_block2">
+                    <p class="content">{{ comment }}</p>
+                    <p class="ptitle2">Posted {{ comments.length - i }} min ago</p> <!-- Example to show comment age -->
                 </div>
-            </div>
-
-            <div style="margin-top: -5px;">
-                <div class="othercomment">
-                    <img src="assets/profile4.png" width="30" height="30">
-                </div>
-                <a class="comments_block2 btn button-inactive2" href="#" role="button">
-                    <div class="inner_comments_block2">
-                        <p class="content">You can try to use the blahblah to blahblahblah, then it might work.</p>
-                        <p class="ptitle2">Asked 3 days ago</p>
-                    </div>
-                </a>
-                <div class="button-container">
-                    <button class="like btn">Like</button>
-                    <button class="reply btn">Reply</button>
                 </div>
             </div>
 

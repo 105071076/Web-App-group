@@ -23,7 +23,6 @@ export class QuestionDetailComponent {
 
 
 
-
 /* --> if we want to store the comments even after a page refresh, we can save it to 
 the local storage
 
