@@ -15,12 +15,14 @@ export class HomeComponent implements OnInit {
   // Replace 'modelName' with the appropriate variable names
   modelName: string = '';
   modal: any;
+
   userData: any;
   posts: any;
   constructor( private http: HttpClient, private router: Router,  private userService: UserService) { 
     this.userData = userService.getUser();
   }
 
+  constructor() { }
 
   ngOnInit(): void {
     console.log(this.userData)
@@ -41,7 +43,19 @@ export class HomeComponent implements OnInit {
     // TODO: Implement API call logic here
   }
 
+
   
+
+
+
+
+
+
+
+
+
+
+
 
   clickQuestions () {
     this.modal = document.getElementById("AskQuestionModal");

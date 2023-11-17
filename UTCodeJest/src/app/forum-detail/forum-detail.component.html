@@ -1,3 +1,6 @@
+<p>forum-detail works!</p>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,7 +76,7 @@
         }
 
         .btn-link {
-            color:#D40839;
+            color:#E42D55;
             font-family: "montserrat", sans-serif;
             font-weight: 400;
             font-style: normal;
@@ -226,6 +229,13 @@
             color: #FFFFFF;
             padding: 8px 20px; 
             border-radius: 9999px; 
+        }
+
+        .nav-link{
+            position: relative;
+            color: #FFFFFF;
+            padding: 8px 20px; 
+
         }
 
 
@@ -451,8 +461,8 @@
         }
 
         .questiontype_block {
-            background: #FFE5EC; 
-            color: #D40839; 
+            background: #F2D5DC; 
+            color: #E42D55; 
             border: none;
             border-radius: 10px; 
             font-size: 14px; /* Adjusted font size from 10px to 8px */
@@ -474,8 +484,8 @@
         }
 
         .button-inactive {
-            background: #FFE5EC; 
-            color: #D40839; 
+            background: #F2D5DC; 
+            color: #E42D55; 
             border-color: #E3E6EA;
 
             /* Prevents the hover effect */
@@ -726,7 +736,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="home.html">
+            <a class="navbar-brand" routerLink="/home">
                 <img src="assets/logo.png" alt="Logo" width="42" height="24" class="d-inline-block align-text-top">
                 UTCodeJest
             </a>
@@ -747,13 +757,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <button class="nav-link-button" href="Question.html" style="font-weight: 600;">Question</button>
+                        <button class="nav-link"  routerLink="/question" >Question</button>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/forum">Forum</a> 
+                        <button class="nav-link-button"  routerLink="/forum" style="font-weight: 600;">Forum</button>
                     </li>
                     
-                    <a class="nav-profile" href="Profile.html">
+                    <a class="nav-profile"  routerLink="/profile">
                         <img src="assets/profile.png" alt="profile" width="30" height="30" class="d-inline-block align-text-top">
                     </a>
                 </ul>
@@ -773,19 +783,19 @@
                 <div class="inner-block">
                     Questions I Asked 
                     <button class="update_block btn btn-light mb-2">
-                        <img src="assets/red_dot.png" alt="pink dot indicating new updates in My Updates- Questions I Asked" width="10" height="10" style="align-items: left; margin-top: 5px;">
+                        <img src="assets/red_dot.png" width="10" height="10" style="align-items: left; margin-top: 5px;">
                         <p style="text-align: left; font-weight: 600; margin-top: 5px; margin-bottom: 5px;">Problems with num()</p>
                         <p class="ptitle">Asked 3 days ago  .  3 new responses</p>
                     </button>
             
                     <button class="update_block btn btn-light mb-2">
-                        <img src="assets/red_dot.png" alt="pink dot indicating new updates in My Updates- Questions I Asked" width="10" height="10" style="align-items: left; margin-top: 5px;">
+                        <img src="assets/red_dot.png" width="10" height="10" style="align-items: left; margin-top: 5px;">
                         <p style="text-align: left; font-weight: 600; margin-top: 5px; margin-bottom: 5px;">Problems with num()</p>
                         <p class="ptitle">Asked 3 days ago  .  3 new responses</p>
                     </button>
                     <span class="sm">
                         <button class="btn btn-show_more show-more-btn">Show more
-                        <img src="assets/showmore-Icon.png" alt="arrow for show more button" width="24" height="24">
+                        <img src="assets/showmore-Icon.png" alt="Logo" width="24" height="24">
                         </button>
                     </span>
                 </div><hr>
@@ -793,19 +803,19 @@
                 <div class="inner-block">
                     Questions I Followed
                     <button class="update_block btn btn-light mb-2">
-                        <img src="assets/red_dot.png" alt="pink dot indicating new updates in My Updates- Questions I Followed" width="10" height="10" style="align-items: left; margin-top: 5px;">
+                        <img src="assets/red_dot.png" width="10" height="10" style="align-items: left; margin-top: 5px;">
                         <p style="text-align: left; font-weight: 600; margin-top: 5px; margin-bottom: 5px;">Problems with num()</p>
                         <p class="ptitle">Asked 3 days ago  .  3 new responses</p>
                     </button>
             
                     <button class="update_block btn btn-light mb-2">
-                        <img src="assets/red_dot.png" alt="pink dot indicating new updates in My Updates- Questions I Followed" width="10" height="10" style="align-items: left; margin-top: 5px;">
+                        <img src="assets/red_dot.png" width="10" height="10" style="align-items: left; margin-top: 5px;">
                         <p style="text-align: left; font-weight: 600; margin-top: 5px; margin-bottom: 5px;">Problems with num()</p>
                         <p class="ptitle">Asked 3 days ago  .  3 new responses</p>
                     </button>
                     <span class="sm">
                         <button class="btn btn-show_more show-more-btn" style="margin-bottom: 0px;">Show more
-                        <img src="assets/showmore-Icon.png" alt="arrow for show more button" width="24" height="24">
+                        <img src="assets/showmore-Icon.png" alt="Logo" width="24" height="24">
                         </button>
                     </span>
                 </div>
@@ -816,8 +826,8 @@
 
         <div class="block3 float-child">
             <div class="title_container2">
-                PROBLEMS WITH NUM()
-                <p class="ptitle">Asked 3 days ago</p>
+                Bootstrap Alternatives 2023
+                <p class="ptitle">Posted 3 days ago</p>
             </div>
             <div class="titletags">
                 <button class="questiontype_block btn btn-light mb-2 button-inactive">Web development</button>
@@ -826,10 +836,10 @@
             <hr style="margin: 10px; margin-left: 0px;">
             
             <div class="description">
-                I faced problems in adding num() to my sorting function. <br>
-                In XML way I had Google's FlexBoxLayout but last commit there was 2 years ago, does anyone<br>
-                know best way to do it in Jetpack Compose, or better a library of any kind?
-                <img class="questionimg" alt="image that shows coding error the user encountered with. THis image is to provide further details for question." src="assets/questionimg.png" style="height: 350px; align-self: stretch;">
+                Explore the landscape of Bootstrap alternatives in 2023! <br>
+                With modern frameworks offering unique features and flexibilities, developers are spoilt for choice. <br>
+                Dive into our curated list of the most promising contenders that are reshaping frontend development with innovative design and functionality.
+                <img class="questionimg" src="assets/conference_pic.png" style="height: 350px; align-self: stretch;">
             </div>
             <hr style="margin: 10px; margin-left: 0px;">
 
@@ -837,48 +847,32 @@
                 <div> <!-- This div groups the text and the comment input together -->
                     Comments
                     <div class="makecomment">
-                        <img src="assets/profile.png" alt="profile image for current logged-in user. This image is next to the comment input field." width="30" height="30">
-                        <form class="submit">
-                            <input class="submit" type="text" placeholder="Add your comments">
-                        </form>
+                        <img src="assets/profile.png" width="30" height="30">
+                        <form (ngSubmit)="addComment()" class="submit">
+                            <input [(ngModel)]="userComment" name="comment" class="submit" type="text" placeholder="Add your comments">
+                            <button type="submit">Post</button>
+                          </form>
                     </div>
                 </div>
                 <button class="filter btn btn-light">Most Popular
-                    <img src="assets/showmore-Icon.png" alt="arrow for Most Popular button that works as filter to show relevant comments under the question-detail image." width="24" height="24" style="margin-left: 8px;">
+                    <img src="assets/showmore-Icon.png" alt="Logo" width="24" height="24" style="margin-left: 8px;">
                 </button>
             </div>
             
-            <div style="margin-top: -5px;">
-                <div class= "othercomment">
-                    <img src="assets/profile4.png" alt="profile image of user4. User4's comment is next to the image." width="30" height="30">
+            <!-- Dynamic comments section -->
+            <div *ngFor="let comment of comments; let i = index">
+                <div class="othercomment">
+                <img src="assets/profile.png" width="30" height="30">
                 </div>
-                <a class="comments_block2 btn button-inactive2" href="#" role="button">
-                    <div class="inner_comments_block2">
-                        <p class="content">You can try to use the blahblah  to blahblahblah, then it might work.</p>
-                        <p class="ptitle2">Asked 3 days ago</p>
-                    </div>
-                </a>
-                <div class="button-container">
-                    <button class="like btn">Like</button>
-                    <button class="reply btn">Reply</button>
+                <div class="comments_block2 btn button-inactive2" role="button">
+                <div class="inner_comments_block2">
+                    <p class="content">{{ comment }}</p>
+                    <p class="ptitle2">Posted {{ comments.length - i }} min ago</p> <!-- Example to show comment age -->
+                </div>
                 </div>
             </div>
 
-            <div style="margin-top: -5px;">
-                <div class= "othercomment">
-                    <img src="assets/profile3.png" alt="profile image of user3. User3's comment is next to the image." width="30" height="30">
-                </div>
-                <a class="comments_block2 btn button-inactive2" href="#" role="button">
-                    <div class="inner_comments_block2">
-                        <p class="content">You can try to use the blahblah  to blahblahblah, then it might work.</p>
-                        <p class="ptitle2">Asked 3 days ago</p>
-                    </div>
-                </a>
-                <div class="button-container">
-                    <button class="like btn">Like</button>
-                    <button class="reply btn">Reply</button>
-                </div>
-            </div>
+
 
 
 
@@ -894,7 +888,7 @@
             <div class="topquestions_block btn" style="margin-top:0px" href="#" role="button">
                 <div class="topinner_questions_block">
                     <div class="topquestion_title">
-                        <img src="assets/profile4.png" alt="profile image of user4. User4's question is selected as top questions. The question title is on the right to the image." width="30" height="30">
+                        <img src="assets/profile4.png" width="30" height="30">
                         <h5 style="margin-left: 5px; font-size: small;">Problems with num()</h5>
                     </div>
                     <div class="topquestion_block">
@@ -908,7 +902,7 @@
             <div class="topquestions_block btn" href="#" role="button">
                 <div class="topinner_questions_block">
                     <div class="topquestion_title">
-                        <img src="assets/profile1.png" alt="profile image of user1. User1's question is selected as top questions. The question title is on the right to the image." width="30" height="30">
+                        <img src="assets/profile1.png" width="30" height="30">
                         <h5 style="margin-left: 5px; font-size: small;">Problems with num()</h5>
                     </div>
                     <div class="topquestion_block">
@@ -922,7 +916,7 @@
             <div class="topquestions_block btn" href="#" role="button">
                 <div class="topinner_questions_block">
                     <div class="topquestion_title">
-                        <img src="assets/david.png" alt="profile image of david. David's question is selected as top questions. The question title is on the right to the image." width="30" height="30">
+                        <img src="assets/david.png" width="30" height="30">
                         <h5 style="margin-left: 5px; font-size: small;">Problems with num()</h5>
                     </div>
                     <div class="topquestion_block">
