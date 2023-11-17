@@ -1,8 +1,4 @@
-
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service';
-import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -10,55 +6,68 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  // Properties for two-way data binding
-  // Replace 'modelName' with the appropriate variable names
-  modelName: string = '';
+  postTitle = '';
+  postDescription = '';
+  postTags = '';
+  selectedFiles: FileList | null = null;
+  selectedMedia: FileList | null = null;
   modal: any;
-
-  userData: any;
-  posts: any;
-  constructor( private http: HttpClient, private router: Router,  private userService: UserService) { 
-    this.userData = userService.getUser();
-  }
+  dropdown: any;// Declare the modal property
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.userData)
-
-    this.http.post('http://localhost:5001/api/post/getUserPosts', this.userData)
-    .subscribe(response => {
-      this.posts = response;
-      this.userService.setUser(this.userData);
-      // Handle success - maybe navigate the user or display a success message
-    }, error => {
-      console.error(error);
-      // Handle error - maybe display an error message to the user
-    });
   }
 
-  // Placeholder for potential API calls in the future
-  callApi() {
-    // TODO: Implement API call logic here
+  onFileChange(event: Event) {
+    const element = event.currentTarget as HTMLInputElement;
+    let fileList: FileList | null = element.files;
+    if (fileList) {
+      this.selectedFiles = fileList;
+    }
   }
 
+  onMediaChange(event: Event) {
+    const element = event.currentTarget as HTMLInputElement;
+    let fileList: FileList | null = element.files;
+    if (fileList) {
+      this.selectedMedia = fileList;
+    }
+  }
 
-  
+  submitPost() {
+    // Here you will handle the form submission.
+    // This typically involves preparing the data and sending it to a backend server.
 
+    console.log('Form Submission', this.postTitle, this.postDescription, this.postTags);
+    // If you have a backend server, you would send the data there.
+    // Example: this.http.post('your-backend-endpoint', { title: this.postTitle, ... });
+  }
 
-
-
-
-
-
-
-
-
-
-
-  clickQuestions () {
+  // Existing methods for modal handling...
+  clickQuestion() {
     this.modal = document.getElementById("AskQuestionModal");
     this.modal.style.display = "block";
   }
+
+  closeQuestion() {
+    this.modal.style.display = "none";
+  }
+
+  clickDiscussion() {
+    this.modal = document.getElementById("CreateDiscussionModal");
+    this.modal.style.display = "block";
+  }
+
+  closeDiscussion() {
+    this.modal.style.display = "none";
+  }
+  isMenuOpened: boolean = false;
+  myFunction() {
+    this.dropdown = document.getElementById("myDropdown");
+    this.isMenuOpened = !this.isMenuOpened;
+  }
+  //closeDropdown() {
+  //this.dropdown.style.display = "none";
+  // }//
 }

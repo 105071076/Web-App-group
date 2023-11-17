@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { UserService } from '../user.service';
 
 
 declare const $: any;
@@ -20,7 +19,7 @@ export class RegisterComponent {
   passwordMismatch: boolean = false;
   errorMessage: string = "";
 
-  constructor(private http: HttpClient, private router: Router,  private userService: UserService) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   onSignUp(event: Event) {
     event.preventDefault();
@@ -47,7 +46,6 @@ export class RegisterComponent {
     this.http.post('http://localhost:5001/api/users', userData)
       .subscribe(response => {
         console.log(response);
-        this.userService.setUser(userData);
         // Handle success - maybe navigate the user or display a success message
         this.showSuccessModal()
       }, error => {
