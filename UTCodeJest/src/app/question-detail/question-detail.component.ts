@@ -6,19 +6,36 @@ import { Component } from '@angular/core';
   styleUrls: ['./question-detail.component.css']
 })
 export class QuestionDetailComponent {
+
+// ... other properties ...
+
+  liked: boolean = false; // Variable to track whether the button is liked
+  toggleLike(): void {
+    this.liked = !this.liked; // Toggle the liked state
+  }
+
   userComment = ''; // For the new comment input by the user
-  comments: string[] = []; // Initialize the comments as an empty array
+  comments: { text: string; order: number; }[] = []; // Initialize as an empty array
+  orderCounter = this.comments.length + 1; // Initialize the order counter to the highest value
 
   constructor() {}
 
   addComment(): void {
-    if (this.userComment.trim()) { // Check if the comment is not just empty spaces
-      this.comments.push(this.userComment); // Add the comment to the comments array
-      this.userComment = ''; // Clear the input field
-    }
-  }
+    if (this.userComment.trim()) {  
+      // Create a new comment object with text and order number
+      const newComment = {
+        text: this.userComment,
+        order: this.orderCounter++,
 
-  // ... other methods ...
+      };
+
+      // Add the new comment to the beginning of the comments array
+      this.comments.unshift(newComment);
+      this.userComment = '';
+    }
+  }  
+
+
 }
 
 
