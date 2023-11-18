@@ -710,6 +710,11 @@
             margin-left: 8%;
         }
 
+        .like-icon {
+            font-size: 15px; /* Adjust the size as needed */
+            margin-top: -0.25%;
+        }
+
         /* Additional styles to ensure buttons align with the rest of the content if needed */
         .othercomment, .comments_block2 {
             margin-right: 10px; /* Adjust as necessary for your layout */
@@ -817,7 +822,7 @@
         <div class="block3 float-child">
             <div class="title_container2">
                 PROBLEMS WITH NUM()
-                <p class="ptitle">Asked 3 days ago</p>
+                <p class="ptitle">Posted 3 days ago</p>
             </div>
             <div class="titletags">
                 <button class="questiontype_block btn btn-light mb-2 button-inactive">Web development</button>
@@ -838,16 +843,38 @@
                     Comments
                     <div class="makecomment">
                         <img src="assets/profile.png" alt="profile image for current logged-in user. This image is next to the comment input field." width="30" height="30">
-                        <form class="submit">
-                            <input class="submit" type="text" placeholder="Add your comments">
-                        </form>
+                        <form (ngSubmit)="addComment()" class="submit">
+                            <input [(ngModel)]="userComment" name="comment" class="submit" type="text" placeholder="Add your comments">
+                            <button type="submit">Post</button>
+                          </form>
                     </div>
                 </div>
-                <button class="filter btn btn-light">Most Popular
+                <button class="filter btn btn-light">Most Recent
                     <img src="assets/showmore-Icon.png" alt="arrow for Most Popular button that works as filter to show relevant comments under the question-detail image." width="24" height="24" style="margin-left: 8px;">
                 </button>
             </div>
             
+
+
+
+            <!-- Dynamic comments section -->
+            <div *ngFor="let comment of comments; let i = index">
+                <div class="othercomment">
+                <img src="assets/profile.png" width="30" height="30">
+                </div>
+                <div class="comments_block2 btn button-inactive2" role="button">
+                <div class="inner_comments_block2">
+                    <p class="content">{{ comment.text }}</p>
+                    <p class="ptitle2">Posted {{ comments.length - comment.order + 1 }} min ago</p> <!-- Reverse the order for comment.order -->
+                </div>
+                </div>
+                <div class="button-container">
+                    <button class="like btn" (click)="toggleLike()">Like</button>
+                    <span *ngIf="liked" class="like-icon">❤️</span> 
+                    <button class="reply btn">Reply</button>
+                </div>
+            </div>
+
             <div style="margin-top: -5px;">
                 <div class= "othercomment">
                     <img src="assets/profile4.png" alt="profile image of user4. User4's comment is next to the image." width="30" height="30">
@@ -855,13 +882,15 @@
                 <a class="comments_block2 btn button-inactive2" href="#" role="button">
                     <div class="inner_comments_block2">
                         <p class="content">You can try to use the blahblah  to blahblahblah, then it might work.</p>
-                        <p class="ptitle2">Asked 3 days ago</p>
+                        <p class="ptitle2">Posted 2 days ago</p>
                     </div>
                 </a>
                 <div class="button-container">
-                    <button class="like btn">Like</button>
+                    <button class="like btn" (click)="toggleLike()">Like</button>
+                    <span *ngIf="liked" class="like-icon">❤️</span> 
                     <button class="reply btn">Reply</button>
                 </div>
+                  
             </div>
 
             <div style="margin-top: -5px;">
@@ -870,12 +899,13 @@
                 </div>
                 <a class="comments_block2 btn button-inactive2" href="#" role="button">
                     <div class="inner_comments_block2">
-                        <p class="content">You can try to use the blahblah  to blahblahblah, then it might work.</p>
-                        <p class="ptitle2">Asked 3 days ago</p>
+                        <p class="content">Well... I used blahblah  to blahblahblah! Try doing it this way.</p>
+                        <p class="ptitle2">Posted 3 days ago</p>
                     </div>
                 </a>
                 <div class="button-container">
-                    <button class="like btn">Like</button>
+                    <button class="like btn" (click)="toggleLike()">Like</button>
+                    <span *ngIf="liked" class="like-icon">❤️</span> 
                     <button class="reply btn">Reply</button>
                 </div>
             </div>

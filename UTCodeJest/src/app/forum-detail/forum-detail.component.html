@@ -76,7 +76,7 @@
         }
 
         .btn-link {
-            color:#E42D55;
+            color:#D40839;
             font-family: "montserrat", sans-serif;
             font-weight: 400;
             font-style: normal;
@@ -461,8 +461,8 @@
         }
 
         .questiontype_block {
-            background: #F2D5DC; 
-            color: #E42D55; 
+            background: #FFE5EC; 
+            color: #D40839; 
             border: none;
             border-radius: 10px; 
             font-size: 14px; /* Adjusted font size from 10px to 8px */
@@ -484,8 +484,8 @@
         }
 
         .button-inactive {
-            background: #F2D5DC; 
-            color: #E42D55; 
+            background: #FFE5EC; 
+            color: #D40839; 
             border-color: #E3E6EA;
 
             /* Prevents the hover effect */
@@ -847,7 +847,7 @@
                 <div> <!-- This div groups the text and the comment input together -->
                     Comments
                     <div class="makecomment">
-                        <img src="assets/profile.png" width="30" height="30">
+                        <img src="assets/profile.png" alt="profile image for current logged-in user. This image is next to the comment input field." width="30" height="30">
                         <form (ngSubmit)="addComment()" class="submit">
                             <input [(ngModel)]="userComment" name="comment" class="submit" type="text" placeholder="Add your comments">
                             <button type="submit">Post</button>
@@ -866,11 +866,20 @@
                 </div>
                 <div class="comments_block2 btn button-inactive2" role="button">
                 <div class="inner_comments_block2">
-                    <p class="content">{{ comment }}</p>
-                    <p class="ptitle2">Posted {{ comments.length - i }} min ago</p> <!-- Example to show comment age -->
+                    <p class="content">{{ comment.text }}</p>
+                    <p class="ptitle2">Posted {{ comments.length - comment.order + 1 }} min ago</p> <!-- Reverse the order for comment.order -->
                 </div>
+                </div>
+                <div class="button-container">
+                <button class="like btn">Like</button>
+                <button class="reply btn">Reply</button>
                 </div>
             </div>
+  
+  
+              
+              
+              
 
 
 
