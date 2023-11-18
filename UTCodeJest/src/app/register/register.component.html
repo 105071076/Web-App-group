@@ -84,11 +84,47 @@
         font-size: 16px;
         margin-bottom: 5px;
       }
+      .navbar {
+        background-color: #fffbfc;
+        height: auto;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        padding-left: 21px;
+        padding-right: 21px;
+      }
+
+      .navbar-brand {
+        background-color: #fffbfc;
+        border-color: #ceced2;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        margin-bottom: 14px;
+        margin-top: 14px;
+        font-family: "montserrat", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 24px;
+      }
     </style>
   </head>
 
-  <app-navbar></app-navbar>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            alt="Logo"
+            class="d-inline-block align-text-top"
+            height="24"
+            src="assets/logo.png"
+            width="42"
+          />
+          UTCodeJest
+        </a>
+      </div>
+    </nav>
     <div class="container">
       <div class="row justify-content-center mt-5">
         <div class="col-md-6">

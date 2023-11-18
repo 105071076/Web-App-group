@@ -1,5 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
+
+declare const $: any;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,11 +18,36 @@ export class HomeComponent implements OnInit {
   selectedMedia: FileList | null = null;
   modal: any;
   dropdown: any;// Declare the modal property
+  base64String: any;
+  userEmail: any;
+  allPosts: any;
+  userForPosts: any;
 
-  constructor() { }
+  constructor(private http: HttpClient, private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
+    console.log(this.userService.getUser());
+    this.userEmail = this.userService.getUser()?.email 
+
+    this. userForPosts = {
+      email : this.userEmail
+    }
+
+    this.getAllPosts(this.userForPosts);
   }
+
+  getAllPosts(userForPosts: any){
+    this.http.post('http://localhost:5001/api/posts/getUserPosts', userForPosts)
+    .subscribe(response => {
+      console.log(response);
+      this.allPosts = response
+    }, error => {
+      console.error(error);
+      
+      
+    });
+  }
+
 
   onFileChange(event: Event) {
     const element = event.currentTarget as HTMLInputElement;
@@ -35,17 +65,59 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  convertToBase64(files: FileList | null) {
+    if (files && files.length > 0) {
+      const file = files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.base64String = reader.result;
+        console.log(this.base64String);
+       
+        // Now you can send this base64String to your backend and store it in MongoDB
+      };
+      reader.onerror = (error) => {
+        // Handle the error scenario
+        console.error('Error reading file:', error);
+      };
+    }
+  }
+  
+
   submitPost() {
     // Here you will handle the form submission.
     // This typically involves preparing the data and sending it to a backend server.
-
-    console.log('Form Submission', this.postTitle, this.postDescription, this.postTags);
-    // If you have a backend server, you would send the data there.
-    // Example: this.http.post('your-backend-endpoint', { title: this.postTitle, ... });
+    this.convertToBase64(this.selectedFiles)
+    
+    setTimeout(() => {
+      const userData = {
+        postTitle: this.postTitle,
+        postDescription: this.postDescription,
+        postTags: this.postTags.split(','),
+        file:  this.base64String?.toString(),
+        userEmail: this.userEmail
+      };
+      console.log(userData.file);
+      
+      this.http.post('http://localhost:5001/api/posts', userData)
+        .subscribe(response => {
+          console.log(response);
+          this.closePostModal()
+          this.showSuccessModal();
+          this.getAllPosts(this.userForPosts);
+        }, error => {
+          console.error(error);
+          
+          
+        });
+      
+    }, 1000);
+    
   }
 
   // Existing methods for modal handling...
   clickQuestion() {
+    $("#modal-container").show();
     this.modal = document.getElementById("AskQuestionModal");
     this.modal.style.display = "block";
   }
@@ -70,4 +142,77 @@ export class HomeComponent implements OnInit {
   //closeDropdown() {
   //this.dropdown.style.display = "none";
   // }//
+
+  closePostModal(){
+    document.getElementById("AskQuestionModal")?.remove()
+  }
+  showErrorModal() {
+    // Use Bootstrap's modal function to show the modal
+    $('#errorModal').modal('show');
+    // $('#errorModal').on('hidden.bs.modal', () => {
+    //   this.errorMessage = "";
+    // });
+  }
+
+  showSuccessModal() {
+    // Use Bootstrap's modal function to show the modal
+    $('#successModal').modal('show');
+  }
+
+  closeSuccessModal(){
+    $('#successModal').modal('hide');
+    this.router.navigate(['/home']);
+  }
+
+  closeErrorModal(){
+    $('#errorModal').modal('hide');
+  }
+
+  handleFileClick(fileBase64: string, event: any): void {
+    event.stopPropagation();
+    // Attempt to extract MIME type from base64 data
+    const mimeTypeMatch = fileBase64.match(/data:([a-zA-Z0-9]+\/[a-zA-Z0-9-.+]+).*,.*/);
+    if (mimeTypeMatch && mimeTypeMatch.length > 1) {
+        const mimeType = mimeTypeMatch[1];
+        if (mimeType.startsWith('image/')) {
+            // Handle image
+            this.openImageInNewTab(fileBase64, event);
+        } else if (mimeType === 'application/pdf') {
+            // Handle PDF
+            this.openPdfInNewTab(fileBase64, event);
+        } else {
+            // Handle other file types, e.g., download
+            this.downloadFile(fileBase64, mimeType, event);
+        }
+    } else {
+        // If MIME type is not found, prompt for download with a generic MIME type
+        this.downloadFile(fileBase64, 'application/octet-stream', event);
+    }
+}
+
+openImageInNewTab(fileBase64: string, event:any): void {
+  event.stopPropagation();
+    const image = new Image();
+    image.src = fileBase64;
+    const w = window.open("");
+    w?.document.write(image.outerHTML);
+}
+
+openPdfInNewTab(fileBase64: string, event:any): void {
+  event.stopPropagation();
+    const pdfWindow = window.open("");
+    pdfWindow?.document.write(
+        `<iframe width='100%' height='100%' src='${fileBase64}'></iframe>`
+    );
+}
+
+downloadFile(fileBase64: string, mimeType: string, event:any): void {
+  event.stopPropagation();
+    const link = document.createElement('a');
+    link.href = fileBase64;
+    link.download = 'download'; // You can give a default filename here
+    link.click();
+}
+
+
 }

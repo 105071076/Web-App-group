@@ -10,7 +10,7 @@ const User = require("../models/User");
 //@access   Private
 router.post(
   "/",
-  [auth, [check("text", "Text is missing").not().isEmpty()]],
+  [[check("postTitle", "Text is missing").not().isEmpty()]],
   async (req, res) => {
     errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -18,13 +18,13 @@ router.post(
     }
 
     try {
-      const user = await User.findById(req.user.id).select("-password");
-
+      console.log(req.body);
       const newPost = new Post({
-        text: req.body.text,
-        name: user.name,
-        avatar: user.avatar,
-        user: req.user.id,
+        title: req.body.postTitle,
+        description: req.body.postDescription,
+        tags: req.body.postTags,
+        file: req.body.file,
+        userEmail: req.body.userEmail,
       });
 
       const post = await newPost.save();
@@ -36,8 +36,8 @@ router.post(
   }
 );
 
-//@route    GET api/posts
-//@desc     GET all posts
+//@route    POST api/posts/getUserPosts
+//@desc     get all posts
 //@access   private
 
 router.post("/getUserPosts", async (req, res) => {
@@ -58,7 +58,7 @@ router.post("/getUserPosts", async (req, res) => {
 //@desc     GET post by id
 //@access   Private
 
-router.get("/:id", auth, async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
     const post = await Post.findOne({ _id: req.params.id });
     if (!post) {
@@ -78,7 +78,7 @@ router.get("/:id", auth, async (req, res) => {
 //@desc     Delete a post by id
 //@access   Private
 
-router.delete("/:id", auth, async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
 
@@ -100,7 +100,7 @@ router.delete("/:id", auth, async (req, res) => {
 // @route    PUT api/posts/like/:id
 // @desc     Like a post
 // @access   Private
-router.put("/like/:id", auth, async (req, res) => {
+router.put("/like/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
 
@@ -125,7 +125,7 @@ router.put("/like/:id", auth, async (req, res) => {
 //@route    PUT api/posts/unlike/:id
 //@desc     Unlike post
 //@access   Private
-router.put("/unlike/:id", auth, async (req, res) => {
+router.put("/unlike/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     if (!post) {
@@ -156,7 +156,7 @@ router.put("/unlike/:id", auth, async (req, res) => {
 //@access   Private
 router.post(
   "/comment/:id",
-  [auth, [check("text", "Text is missing").not().isEmpty()]],
+  [[check("text", "Text is missing").not().isEmpty()]],
   async (req, res) => {
     errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -188,7 +188,7 @@ router.post(
 //@desc     Delete comment on post
 //@access   Private
 
-router.delete("/comment/:id/:comment_id", auth, async (req, res) => {
+router.delete("/comment/:id/:comment_id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
 

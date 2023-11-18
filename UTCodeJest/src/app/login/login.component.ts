@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 
 declare const $: any;
@@ -16,7 +17,7 @@ export class LoginComponent {
 
   public errorMessage: string = '';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router, private userService: UserService) {}
 
   loginUser() {
     const userData = {
@@ -27,6 +28,7 @@ export class LoginComponent {
     this.http.post('http://localhost:5001/api/auth', userData)
       .subscribe(response => {
         console.log(response);
+        this.userService.setUser(userData);
         this.showSuccessModal();
       }, error => {
         console.error(error);
