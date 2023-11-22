@@ -1,6 +1,7 @@
 
 import { AfterViewInit, Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +14,7 @@ export class NavbarComponent implements AfterViewInit{
   questionActive: any;
   forumActive: any;
   profileActive: any;
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userService: UserService) { }
   route: any
   ngAfterViewInit() {
     this.onClickRoute()
@@ -27,6 +28,10 @@ export class NavbarComponent implements AfterViewInit{
     if(this.router.url === '/question') {this.questionActive = true; this.forumActive = false;}
     if(this.router.url === '/forum') {this.forumActive = true; this.questionActive = false;}
     if(this.router.url === '/profile') {this.profileActive = true; this.profileActive = false;}
+  }
+
+  logout(){
+    this.userService.setUser({})
   }
  
 }

@@ -615,33 +615,33 @@
                  margin-bottom: 7px;
                }
 
-               .modal {
+               /* .modal {
 
-          position: fixed; /* Stay in place */
+          position: fixed;
 
           left: 0;
           top: 0;
-
-          overflow: auto; /* Enable scroll if needed */
-          background-color: rgb(0,0,0); /* Fallback color */
-          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+          opacity: 100%;
+          overflow: auto;
+          background-color: rgb(0,0,0);
+          background-color: rgba(0,0,0,0.4);
       }
 
       .modal-content {
           background-color: #fefefe;
-          margin: 15% auto; /* 15% from the top and centered */
+          margin: 15% auto;
           padding: 20px;
           border: 1px solid #888;
-          width: 50%; /* Could be more or less, depending on screen size */
-          max-height: 80vh; /* Adjust as per your requirement */
-          overflow-y: auto; /* Enable vertical scroll */
-      }
-
-      /* Add more styles for your buttons, inputs, and other elements as needed */
+          width: 50%;
+          max-height: 80vh;
+          overflow-y: auto;
+      } */
 
 
 
-               .modal-header {
+
+
+               /* .modal-header {
                  display: flex;
                  flex: 1 0 0;
                  flex-direction: column;
@@ -675,7 +675,7 @@
                  gap: 12px;
                  align-self: stretch;
 
-               }
+               } */
 
                .form-title {
                  display: flex;
@@ -710,8 +710,7 @@
 
                .form-addtag {
                  display: flex;
-                 width: 928px;
-                 height: 48px;
+
                  padding: 8px 12px;
                  align-items: center;
                  gap: 12px;
@@ -765,8 +764,7 @@
 
                .tag-content {
                  display: flex;
-                 width: 928px;
-                 width: 673px;
+
                  align-items: center;
                  gap: 12px;
                }
@@ -940,107 +938,232 @@
           Ask a Question
         </button>
 
-        <!-- The Modal -->
-        <div id="AskQuestionModal" class="modal hidden">
-          <div class="modal-content">
-            <div class="modal-header">
-              <span (click)="closeQuestion()">
-                Ask a question
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img
-                  class="close"
-                  src="assets/remove-circle.png"
-                />
-              </span>
-            </div>
-            <div class="modal-body">
-              <div class="form-title">
-                <label for="title">Title</label>
-                <input
-                  id="title"
-                  type="text"
-                  class="form-inputbox"
-                  [(ngModel)]="postTitle"
-                  name="title"
-                  required
-                />
-
-                <label for="description">Description</label>
-                <textarea
-                  id="description"
-                  class="form-inputbox"
-                  [(ngModel)]="postDescription"
-                  name="description"
-                  required
-                ></textarea>
-              </div>
-
-              <div>
-                <label
-                  for="file-upload"
-                  class="file-upload filter btn btn-light"
-                  >Attach files<img src="assets/post add.png" /><input
-                    id="file-upload"
-                    type="file"
-                    (change)="onFileChange($event)"
-                    multiple
-                    style="display: none"
-                /></label>
-              </div>
-
-              <div>
-                <label
-                  for="media-upload"
-                  class="media-upload filter btn btn-light"
-                  >Attach media<img src="assets/image-rectangle.png" />
-                  <input
-                    id="media-upload"
-                    type="file"
-                    (change)="onMediaChange($event)"
-                    accept="image/*,video/*"
-                    multiple
-                    style="display: none"
-                /></label>
-              </div>
-
-              <div class="dropdown hidden">
-                <label for="tags">Tags</label>
-
-                <div class="form-title">
-                  <input
-                    id="tags"
-                    type="text"
-                    (click)="myFunction()"
-                    placeholder="Add tags"
-                    class="form-addtag"
-                    [(ngModel)]="postTags"
-                    name="tags"
+        <!-- <div
+          class="modal"
+          id="AskQuestionModal"
+          tabindex="-1"
+          aria-labelledby="successModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="successModalLabel">Success</h5>
+                <span (click)="closeQuestion()">
+                  Ask a question
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img
+                    class="close"
+                    src="assets/remove-circle.png"
                   />
-                  <div
-                    id="myDropdown"
-                    class="dropdown-content hidden"
-                    *ngIf="isMenuOpened"
-                  >
-                    Frequently used tags
-                    <div class="tag-content">
-                      <div class="tag">HTML</div>
-                      <div class="tag">CSS</div>
-                      <div class="tag">JavaSript</div>
-                      <div class="tag">Angular</div>
-                      <div class="tag">Python</div>
+                </span>
+              </div>
+              <div class="modal-body">
+                <div class="form-title">
+                  <label for="title">Title</label>
+                  <input
+                    id="title"
+                    type="text"
+                    class="form-inputbox"
+                    [(ngModel)]="postTitle"
+                    name="title"
+                    required
+                  />
+
+                  <label for="description">Description</label>
+                  <textarea
+                    id="description"
+                    class="form-inputbox"
+                    [(ngModel)]="postDescription"
+                    name="description"
+                    required
+                  ></textarea>
+                </div>
+
+                <div>
+                  <label
+                    for="file-upload"
+                    class="file-upload filter btn btn-light"
+                    >Attach files<img src="assets/post add.png" /><input
+                      id="file-upload"
+                      type="file"
+                      (change)="onFileChange($event)"
+                      multiple
+                      style="display: none"
+                  /></label>
+                </div>
+
+                <div>
+                  <label
+                    for="media-upload"
+                    class="media-upload filter btn btn-light"
+                    >Attach media<img src="assets/image-rectangle.png" />
+                    <input
+                      id="media-upload"
+                      type="file"
+                      (change)="onMediaChange($event)"
+                      accept="image/*,video/*"
+                      multiple
+                      style="display: none"
+                  /></label>
+                </div>
+
+                <div class="dropdown hidden">
+                  <label for="tags">Tags</label>
+
+                  <div class="form-title">
+                    <input
+                      id="tags"
+                      type="text"
+                      (click)="myFunction()"
+                      placeholder="Add tags"
+                      class="form-addtag"
+                      [(ngModel)]="postTags"
+                      name="tags"
+                    />
+                    <div
+                      id="myDropdown"
+                      class="dropdown-content hidden"
+                      *ngIf="isMenuOpened"
+                    >
+                      Frequently used tags
+                      <div class="tag-content">
+                        <div class="tag">HTML</div>
+                        <div class="tag">CSS</div>
+                        <div class="tag">JavaSript</div>
+                        <div class="tag">Angular</div>
+                        <div class="tag">Python</div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <div class="modal-footer">
+                <button
+                  class="filter btn btn-light"
+                  style="font-size: 14px; border-radius: 10px"
+                  (click)="submitPost()"
+                >
+                  Post
+                </button>
+              </div>
             </div>
+          </div>
+        </div> -->
 
-            <div class="modal-footer">
-              <button
-                class="filter btn btn-light"
-                style="font-size: 14px; border-radius: 10px"
-                (click)="submitPost()"
-              >
-                Post
-              </button>
+        <div id="AskQuestionModal" class="modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Ask a question</h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                  (click)="closeQuestion()"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-title">
+                  <label for="title">Title</label>
+                  <input
+                    id="title"
+                    type="text"
+                    class="form-inputbox"
+                    [(ngModel)]="postTitle"
+                    name="title"
+                    required
+                  />
+
+                  <label for="description">Description</label>
+                  <textarea
+                    id="description"
+                    class="form-inputbox"
+                    [(ngModel)]="postDescription"
+                    name="description"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="mt-2">
+                  <label
+                    for="file-upload"
+                    class="file-upload filter btn btn-light"
+                    >Attach files<img src="assets/post add.png" /><input
+                      id="file-upload"
+                      type="file"
+                      (change)="onFileChange($event)"
+                      multiple
+                      style="display: none"
+                  /></label>
+                </div>
+
+                <!-- <div class="mt-2">
+                  <label
+                    for="media-upload"
+                    class="media-upload filter btn btn-light"
+                    >Attach media<img src="assets/image-rectangle.png" />
+                    <input
+                      id="media-upload"
+                      type="file"
+                      (change)="onMediaChange($event)"
+                      accept="image/*,video/*"
+                      multiple
+                      style="display: none"
+                  /></label>
+                </div> -->
+
+                <div class="dropdown hidden">
+                  <label for="tags">Tags</label>
+
+                  <div class="form-title">
+                    <input
+                      id="tags"
+                      type="text"
+                      (click)="myFunction()"
+                      placeholder="Add tags"
+                      class="form-addtag"
+                      [(ngModel)]="postTags"
+                      name="tags"
+                      style="width: auto"
+                    />
+                    <div
+                      id="myDropdown"
+                      *ngIf="isMenuOpened"
+                      style="width: auto"
+                      class="mt-2"
+                    >
+                      Frequently used tags
+                      <div class="tag-content">
+                        <div class="tag">HTML</div>
+                        <div class="tag">CSS</div>
+                        <div class="tag">JavaSript</div>
+                        <div class="tag">Angular</div>
+                        <div class="tag">Python</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  (click)="submitPost()"
+                >
+                  Create Post
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                  (click)="closeQuestion()"
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1161,24 +1284,34 @@
         <a
           *ngFor="let post of allPosts"
           class="questions_block btn"
-          routerLink="/question-detail"
+          (click)="viewPost(post)"
           role="button"
         >
           <div class="inner_questions_block">
-            <div class="question_title">
-              <img src="assets/david.png" width="30" height="30" />
-              <h5 style="margin-left: 5px">{{ post.title }}</h5>
+            <div class="question_title row">
+              <img
+                class="col-md-1 px-4"
+                src="assets/david.png"
+                width="30"
+                height="30"
+              />
+              <h5 class="col-md-10 p-1" style="margin-left: 5px">
+                {{ post.title }}
+              </h5>
             </div>
             <p class="content">
               {{ post.description }}
             </p>
-            <div class="file-icon" (click)="handleFileClick(post.file, $event)">
+            <div *ngIf="post.file" class="mb-3 file-icon">
               <img
                 src="assets/generic-file-icon.png"
                 alt="File"
                 width="30"
                 height="30"
+                (click)="handleFileClick(post.file, $event)"
               />
+              <span class="file-name">{{ getFileName(post.file) }}</span>
+              <!-- Display file name -->
             </div>
             <button
               *ngFor="let tag of post.tags"
@@ -1290,7 +1423,7 @@
         <div class="modal-header">
           <h5 class="modal-title" id="successModalLabel">Success</h5>
         </div>
-        <div class="modal-body">Registration successful!</div>
+        <div class="modal-body">Post Created Successful!</div>
         <div class="modal-footer">
           <button
             type="button"

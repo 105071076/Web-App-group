@@ -14,6 +14,7 @@ import { QuestionComponent } from './question/question.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { QuestionDetailComponent } from './question-detail/question-detail.component';
 import { ForumDetailComponent } from './forum-detail/forum-detail.component';
+import { Base64DecodePipe } from './base64-decode.pipe';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ForumDetailComponent } from './forum-detail/forum-detail.component';
     QuestionComponent,
     NavbarComponent,
     QuestionDetailComponent,
-    ForumDetailComponent
+    ForumDetailComponent,
+    Base64DecodePipe
   ],
   imports: [
     BrowserModule,
