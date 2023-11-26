@@ -46,7 +46,7 @@
         font-size: 16px;
       }
       .btn-link {
-        color: #D40839;
+        color: #d40839;
         font-family: "Montserrat", sans-serif;
         font-weight: 400;
         font-size: 14px;
@@ -132,7 +132,11 @@
             <div class="mb-3 text-center">
               <h2 style="font-size: 32px; margin: 32px 0">Sign Up</h2>
             </div>
-            <form (ngSubmit)="onSignUp($event)" #form="ngForm">
+            <form
+              (ngSubmit)="onSignUp($event)"
+              #form="ngForm"
+              enctype="multipart/form-data"
+            >
               <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input
@@ -198,6 +202,21 @@
                   Password and Confirm Password do not match.
                 </div>
               </div>
+
+              <div class="mb-3">
+                <label for="profileImage" class="form-label"
+                  >Profile Image</label
+                >
+                <input
+                  type="file"
+                  class="form-control"
+                  id="profileImage"
+                  name="profileImage"
+                  accept="image/*"
+                  [(ngModel)]="profileImage"
+                />
+              </div>
+
               <div class="mb-3">
                 <button type="submit" class="btn btn-primary w-100">
                   SIGN UP

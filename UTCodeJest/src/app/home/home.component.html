@@ -810,7 +810,10 @@
         <hr />
         <div class="inner-block">
           Questions I Asked
-          <button class="update_block btn btn-light mb-2">
+          <button
+            class="update_block btn btn-light mb-2"
+            *ngFor="let userPost of userPosts"
+          >
             <img
               src="assets/red_dot.png"
               width="10"
@@ -825,30 +828,13 @@
                 margin-bottom: 5px;
               "
             >
-              Problems with num()
+              {{ userPost.title }}
             </p>
-            <p class="ptitle">Asked 3 days ago . 3 new responses</p>
+            <p class="ptitle">
+              Asked 3 days ago . {{ userPost.comment.length }}
+            </p>
           </button>
 
-          <button class="update_block btn btn-light mb-2">
-            <img
-              src="assets/red_dot.png"
-              width="10"
-              height="10"
-              style="float: left; margin-top: 5px"
-            />
-            <p
-              style="
-                text-align: left;
-                font-weight: 600;
-                margin-top: 5px;
-                margin-bottom: 5px;
-              "
-            >
-              Problems with num()
-            </p>
-            <p class="ptitle">Asked 3 days ago . 3 new responses</p>
-          </button>
           <span class="sm"></span>
           <button class="btn btn-show_more show-more-btn">
             Show more

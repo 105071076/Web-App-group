@@ -10,21 +10,20 @@ import { QuestionComponent } from './question/question.component';
 import { QuestionDetailComponent } from './question-detail/question-detail.component';
 import { ForumDetailComponent } from './forum-detail/forum-detail.component';
 
-
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'home', component: HomeComponent }, 
-  { path: 'login', component: LoginComponent},
-   {path: 'forum', component: ForumComponent},
-   {path: 'profile', component: ProfileComponent},
-   {path: 'question', component: QuestionComponent},
-   {path: 'question-detail', component: QuestionDetailComponent},
-   {path: 'forum-detail', component: ForumDetailComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'forum', component: ForumComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'question', component: QuestionComponent },
+  { path: 'question-detail', component: QuestionDetailComponent },
+  { path: 'forum-detail', component: ForumDetailComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

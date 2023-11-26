@@ -941,65 +941,8 @@
             </div>
           </div>
           <div class="button-container">
-            <button class="like btn" (click)="toggleLike()">Like</button>
-            <span *ngIf="liked" class="like-icon">❤️</span>
-            <button class="reply btn">Reply</button>
-          </div>
-        </div>
-
-        <div style="margin-top: -5px">
-          <div class="othercomment">
-            <img
-              src="assets/profile4.png"
-              alt="profile image of user4. User4's comment is next to the image."
-              width="30"
-              height="30"
-            />
-          </div>
-          <a
-            class="comments_block2 btn button-inactive2"
-            href="#"
-            role="button"
-          >
-            <div class="inner_comments_block2">
-              <p class="content">
-                You can try to use the blahblah to blahblahblah, then it might
-                work.
-              </p>
-              <p class="ptitle2">Posted 2 days ago</p>
-            </div>
-          </a>
-          <div class="button-container">
-            <button class="like btn" (click)="toggleLike()">Like</button>
-            <span *ngIf="liked" class="like-icon">❤️</span>
-            <button class="reply btn">Reply</button>
-          </div>
-        </div>
-
-        <div style="margin-top: -5px">
-          <div class="othercomment">
-            <img
-              src="assets/profile3.png"
-              alt="profile image of user3. User3's comment is next to the image."
-              width="30"
-              height="30"
-            />
-          </div>
-          <a
-            class="comments_block2 btn button-inactive2"
-            href="#"
-            role="button"
-          >
-            <div class="inner_comments_block2">
-              <p class="content">
-                Well... I used blahblah to blahblahblah! Try doing it this way.
-              </p>
-              <p class="ptitle2">Posted 3 days ago</p>
-            </div>
-          </a>
-          <div class="button-container">
-            <button class="like btn" (click)="toggleLike()">Like</button>
-            <span *ngIf="liked" class="like-icon">❤️</span>
+            <button class="like btn" (click)="toggleLike(comment)">Like</button>
+            <span *ngIf="liked" class="like-icon">❤️ {{ comment.likes }}</span>
             <button class="reply btn">Reply</button>
           </div>
         </div>

@@ -6,7 +6,30 @@ const postSchema = new mongoose.Schema({
   tags: [String],
   file: String,
   userEmail: String,
-  // other fields as necessary
+  comment: [
+    {
+      user: {
+        type: String,
+      },
+      text: {
+        type: String,
+        required: true,
+      },
+      name: {
+        type: String,
+      },
+      avatar: {
+        type: String,
+      },
+      date: {
+        type: Date,
+        default: Date.now,
+      },
+      likes: {
+        type: Number,
+      },
+    },
+  ],
 });
 
 const Post = mongoose.model("posts", postSchema);

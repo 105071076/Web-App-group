@@ -30,25 +30,23 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            (click)="onClickRoute()"
             [ngClass]="{ selected: questionActive }"
             routerLink="/question"
             >Questions</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="onClickRoute()" routerLink="/forum"
-            >Forum</a
-          >
+          <a class="nav-link" routerLink="/forum">Forum</a>
         </li>
 
-        <a class="nav-profile" (click)="onClickRoute()" routerLink="/profile">
+        <a class="nav-profile" routerLink="/profile">
           <img
-            src="assets/profile.png"
+            [src]="userImage"
             alt="profile"
             width="30"
             height="30"
-            class="d-inline-block align-text-top"
+            class="circular-image"
+            routerLink="/profile"
           />
         </a>
 

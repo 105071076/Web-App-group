@@ -36,8 +36,25 @@ router.post(
   }
 );
 
-//@route    POST api/posts/getUserPosts
+//@route    POST api/posts/getAllPosts
 //@desc     get all posts
+//@access   private
+
+router.post("/getAllPosts", async (req, res) => {
+  try {
+    const posts = await Post.find();
+    if (!posts.isEmpty) {
+      console.log(posts);
+      res.json(posts);
+    }
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+
+//@route    POST api/posts/getUserPosts
+//@desc     get all posts by user
 //@access   private
 
 router.post("/getUserPosts", async (req, res) => {
@@ -155,7 +172,7 @@ router.put("/unlike/:id", async (req, res) => {
 //@desc     Comment on post
 //@access   Private
 router.post(
-  "/comment/:id",
+  "/comment",
   [[check("text", "Text is missing").not().isEmpty()]],
   async (req, res) => {
     errors = validationResult(req);
@@ -164,15 +181,19 @@ router.post(
     }
 
     try {
-      const user = await User.findById(req.user.id).select("-password");
-      const post = await Post.findById(req.params.id);
+      const email = req.body.user.email;
+      let user = await User.findOne({ email });
+      console.log(user);
+      const post = await Post.findById(req.body.postId);
 
       const newComment = {
         text: req.body.text,
         name: user.name,
         avatar: user.avatar,
-        user: req.user.id,
+        user: user.id,
+        likes: 0,
       };
+
       post.comment.unshift(newComment);
 
       await post.save();

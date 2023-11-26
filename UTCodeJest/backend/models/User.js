@@ -21,6 +21,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+
+  profileImage: {
+    type: String, // Storing the Base64 string
+  },
 });
 
 module.exports = User = mongoose.model("user", UserSchema);

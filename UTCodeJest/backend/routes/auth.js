@@ -21,6 +21,20 @@ router.get("/", auth, async (req, res) => {
   }
 });
 
+//@route    GET api/auth
+//@desc     Authentication User and get Token
+//@access   Public
+
+router.get("/getAllUsers", async (req, res) => {
+  try {
+    const user = await User.find();
+    res.json(user);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+
 //@route    POST api/auth
 //@desc     Authentication User and get Token
 //@access   Public
@@ -51,6 +65,7 @@ router.post(
       if (!isMatch) {
         res.status(400).json({ errors: [{ msg: "Invalid Credentials" }] });
       }
+
       const payload = {
         user: {
           id: user.id,
@@ -62,7 +77,7 @@ router.post(
         { expiresIn: 360000 },
         (err, token) => {
           if (err) throw err;
-          res.json({ token });
+          res.json(user);
         }
       );
     } catch (err) {

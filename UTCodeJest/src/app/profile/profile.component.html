@@ -27,9 +27,9 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
 
     <style>
       /* CSS Style Sheet */
@@ -73,7 +73,7 @@
       }
 
       .btn-link {
-        color: #D40839;
+        color: #d40839;
         font-family: "montserrat", sans-serif;
         font-weight: 400;
         font-style: normal;
@@ -213,7 +213,7 @@
       }
 
       .layout-left {
-        flex: .7;
+        flex: 0.7;
         height: 100%;
         padding-left: 36px;
         padding-right: 36px;
@@ -224,7 +224,7 @@
         display: inline-flex;
       }
 
-      .left-blocks{
+      .left-blocks {
         width: 100%; /* 979px */
         flex-direction: column;
         justify-content: flex-start;
@@ -233,7 +233,7 @@
         display: inline-flex;
       }
 
-      .intro{
+      .intro {
         align-self: stretch;
         padding-left: 20px;
         padding-top: 20px;
@@ -249,14 +249,14 @@
         display: flex;
       }
 
-      .intro-block{
+      .intro-block {
         display: flex;
         margin-top: 1%;
         flex-direction: column;
         gap: 15px;
       }
 
-      .profileimg{
+      .profileimg {
         background: #d7d7d9;
         border-radius: 999px;
         overflow: hidden;
@@ -266,8 +266,8 @@
       }
 
       .questiontype_block {
-        background: #FFE5EC;
-        color: #D40839;
+        background: #ffe5ec;
+        color: #d40839;
         border: none;
         border-radius: 10px;
         font-size: 14px; /* Adjusted font size from 10px to 8px */
@@ -275,13 +275,13 @@
         margin-top: -5px; /* Adjust this value to increase or decrease the spacing */
       }
 
-      .editbtnbox{
+      .editbtnbox {
         background: #e5e5e9;
         border-radius: 12px;
-        margin-top: -.5%;
+        margin-top: -0.5%;
       }
 
-      .editbtn{
+      .editbtn {
         color: #0a192b;
         font-size: 14px;
         font-family: Montserrat;
@@ -293,8 +293,7 @@
         background-color: #dad9dd !important; /* Hover state background color */
       }
 
-
-      .name{
+      .name {
         align-self: stretch;
         height: 20px;
         color: #0a192b;
@@ -304,12 +303,12 @@
         word-wrap: break-word;
       }
 
-      .email-block{
+      .email-block {
         display: flex;
         flex-direction: row;
       }
 
-      .email{
+      .email {
         color: #0a192b;
         font-size: 14px;
         font-family: Montserrat;
@@ -317,7 +316,7 @@
         word-wrap: break-word;
       }
 
-      .email-detail{
+      .email-detail {
         color: rgba(10, 25, 43, 0.65);
         font-size: 16px;
         font-family: roboto;
@@ -327,7 +326,7 @@
         margin-left: 3%;
       }
 
-      .bio-block{
+      .bio-block {
         align-self: stretch;
         height: 145px;
         padding-top: 14px;
@@ -343,7 +342,7 @@
         display: flex;
       }
 
-      .line{
+      .line {
         align-self: stretch;
         padding: 12px;
         border-top: 1px #ceced2 solid;
@@ -353,7 +352,7 @@
         display: inline-flex;
       }
 
-      .bio{
+      .bio {
         color: #191919;
         font-size: 24px;
         font-family: Montserrat;
@@ -363,7 +362,7 @@
         word-wrap: break-word;
       }
 
-      .space{
+      .space {
         align-self: stretch;
         padding-left: 16px;
         padding-right: 16px;
@@ -371,8 +370,6 @@
         align-items: center;
         display: inline-flex;
       }
-
-
 
       .flex-child {
         display: flex;
@@ -387,8 +384,7 @@
         align-items: flex-start; /* Align items to the top */
       }
 
-
-      .layout-right{
+      .layout-right {
         flex: 0.3;
         flex-direction: column;
         justify-content: auto;
@@ -398,7 +394,7 @@
         margin-left: -8px;
       }
 
-      .skill{
+      .skill {
         height: 210px;
         padding-top: 14px;
         background: #fffbfc;
@@ -413,8 +409,6 @@
         display: flex;
         width: 100%;
       }
-
-
     </style>
   </head>
 
@@ -422,184 +416,142 @@
 
   <body>
     <div class="flex-container">
-    <div class= "flex-child layout-left">
-      <div class="left-blocks">
-        <div class="intro">
-
-          <div class="profileimg" style="width:84px; height: 84px;">
-            <img
-              style="width: 90px; height: 90px"
-              src="assets/memoji.png"
-            />
-          </div>
-
-          <div class="intro-block" style="margin-left: 15px;">
-
-            <div class="name">
-              Eren Jaeger
+      <div class="flex-child layout-left">
+        <div class="left-blocks">
+          <div class="intro">
+            <div class="profileimg" style="width: 84px; height: 84px">
+              <img style="width: 150px; height: 90px" [src]="profileImage" />
             </div>
-                  
-            <div class="email-block">
-              <span class="email"> Email</span>
-              <span class="email-detail">erenjg@utexas.edu</span>    
-              <span style="width: 240px; height: 24px; position: relative; margin-left: 3%; align-self: center;">
+
+            <div class="intro-block" style="margin-left: 15px">
+              <div class="name">{{ userDetails.name }}</div>
+
+              <div class="email-block">
+                <span class="email"> Email</span>
+                <span class="email-detail">{{ userDetails.email }}</span>
+                <span
+                  style="
+                    width: 240px;
+                    height: 24px;
+                    position: relative;
+                    margin-left: 3%;
+                    align-self: center;
+                  "
+                >
                   <img src="assets/link-external.png" />
-              </span>
+                </span>
+              </div>
             </div>
 
-          </div>
-
-          <div class="editbtnbox" style="margin-left: 41%;">
-            <div class="editbtn btn btn-light">
-              Edit
+            <div class="editbtnbox" style="margin-left: 41%">
+              <div class="editbtn btn btn-light">Edit</div>
             </div>
           </div>
-          
-          
-        </div>
 
-
-
-
-
-
-        <div class="bio-block">
-          <div class="space">
-
-            <div class="bio">
-              Bio
+          <div class="bio-block">
+            <div class="space">
+              <div class="bio">Bio</div>
             </div>
 
-          </div>
+            <div class="line">
+              <h5
+                style="
+                  font-family: roboto;
+                  font-weight: 400;
+                  font-size: 15px;
+                  margin-left: 5px;
+                "
+              >
+                Hi! I’m Eren. I’m a freshman in computer science program. I have
+                plenty of experience in Front-end and Bootstrap. I’m open to
+                freelancing <br />as front-end developer. Plz DM me if
+                interested!
+              </h5>
+            </div>
 
-          <div class="line">
-            <h5 style="font-family: roboto; font-weight: 400; font-size: 15px; margin-left: 5px;">
-              Hi! I’m Eren. I’m a freshman in computer science program. I have
-              plenty of experience in Front-end and Bootstrap. I’m open to
-              freelancing <br>as front-end developer. Plz DM me if interested!
-            </h5>
-          </div>
-
-          <div class="editbtnbox" style="margin-top: -13%; margin-left: 93%;">
-            <div class="editbtn btn btn-light">
-              Edit
+            <div class="editbtnbox" style="margin-top: -13%; margin-left: 93%">
+              <div class="editbtn btn btn-light">Edit</div>
             </div>
           </div>
-          
-        </div>
 
-
-
-        <div
-          style="
-            align-self: stretch;
-            height: 100%;
-            padding-top: 14px;
-            padding-bottom: 5px;
-            background: #fffbfc;
-            box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px #ceced2 solid;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            gap: 12px;
-            display: flex;
-          "
-        >
           <div
             style="
               align-self: stretch;
-              padding-left: 16px;
-              padding-right: 16px;
-              justify-content: flex-start;
-              align-items: flex-start;
-              gap: 10px;
-              display: inline-flex;
-            "
-          >
-            <div
-              style="
-                flex: 1 1 0;
-                color: #191919;
-                font-size: 24px;
-                font-family: Montserrat;
-                font-weight: 400;
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                word-wrap: break-word;
-              "
-            >
-              MY HISTORY
-            </div>
-          </div>
-          <div
-            style="
-              align-self: stretch;
-              height: 560px;
-              padding: 12px;
-              border-top: 1px #ceced2 solid;
+              height: 100%;
+              padding-top: 14px;
+              padding-bottom: 5px;
+              background: #fffbfc;
+              box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+              border-radius: 12px;
+              overflow: hidden;
+              border: 1px #ceced2 solid;
               flex-direction: column;
               justify-content: flex-start;
               align-items: flex-start;
-              gap: 8px;
+              gap: 12px;
               display: flex;
             "
           >
             <div
               style="
-                padding-left: 8px;
-                padding-right: 8px;
-                padding-top: 4px;
-                padding-bottom: 4px;
-                border-radius: 16px;
+                align-self: stretch;
+                padding-left: 16px;
+                padding-right: 16px;
                 justify-content: flex-start;
                 align-items: flex-start;
-                gap: 8px;
+                gap: 10px;
                 display: inline-flex;
               "
             >
               <div
                 style="
-                  padding-left: 16px;
-                  padding-right: 16px;
-                  padding-top: 8px;
-                  padding-bottom: 8px;
-                  background: #000000;
-                  border-radius: 9999px;
-                  justify-content: center;
-                  align-items: center;
-                  gap: 10px;
-                  display: flex;
+                  flex: 1 1 0;
+                  color: #191919;
+                  font-size: 24px;
+                  font-family: Montserrat;
+                  font-weight: 400;
+                  text-transform: uppercase;
+                  letter-spacing: 2px;
+                  word-wrap: break-word;
                 "
               >
-                <div
-                  style="
-                    color: #ffffff;
-                    font-size: 16px;
-                    font-family: Montserrat;
-                    font-weight: 600;
-                    word-wrap: break-word;
-                  "
-                >
-                  Questions I Asked
-                </div>
+                MY HISTORY
               </div>
+            </div>
+            <div
+              style="
+                align-self: stretch;
+                height: 560px;
+                padding: 12px;
+                border-top: 1px #ceced2 solid;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 8px;
+                display: flex;
+              "
+            >
               <div
                 style="
+                  padding-left: 8px;
+                  padding-right: 8px;
+                  padding-top: 4px;
+                  padding-bottom: 4px;
+                  border-radius: 16px;
                   justify-content: flex-start;
                   align-items: flex-start;
-                  display: flex;
+                  gap: 8px;
+                  display: inline-flex;
                 "
               >
                 <div
                   style="
-                    padding-left: 12px;
-                    padding-right: 12px;
+                    padding-left: 16px;
+                    padding-right: 16px;
                     padding-top: 8px;
                     padding-bottom: 8px;
-                    border-bottom: 1px solid;
+                    background: #000000;
+                    border-radius: 9999px;
                     justify-content: center;
                     align-items: center;
                     gap: 10px;
@@ -608,564 +560,193 @@
                 >
                   <div
                     style="
+                      color: #ffffff;
+                      font-size: 16px;
+                      font-family: Montserrat;
+                      font-weight: 600;
+                      word-wrap: break-word;
+                    "
+                  >
+                    Questions I Asked
+                  </div>
+                </div>
+                <div
+                  style="
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    display: flex;
+                  "
+                >
+                  <div
+                    style="
+                      padding-left: 12px;
+                      padding-right: 12px;
+                      padding-top: 8px;
+                      padding-bottom: 8px;
+                      border-bottom: 1px solid;
+                      justify-content: center;
+                      align-items: center;
+                      gap: 10px;
+                      display: flex;
+                    "
+                  >
+                    <div
+                      style="
+                        color: #0a192b;
+                        font-size: 16px;
+                        font-family: Montserrat;
+                        font-weight: 400;
+                        word-wrap: break-word;
+                      "
+                    >
+                      Questions I Followed
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  align-self: stretch;
+                  height: 156px;
+                  padding: 12px;
+                  background: rgba(206, 206, 210, 0.12);
+                  border-radius: 12px;
+                  overflow: hidden;
+                  border: 1px #ceced2 solid;
+                  flex-direction: column;
+                  justify-content: flex-start;
+                  align-items: flex-start;
+                  gap: 8px;
+                  display: flex;
+                "
+                *ngFor="let post of userPosts"
+                (click)="viewPost(post)"
+              >
+                <div
+                  style="
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 8px;
+                    display: inline-flex;
+                  "
+                >
+                  <div
+                    style="
+                      width: 392px;
+                      align-self: stretch;
                       color: #0a192b;
                       font-size: 16px;
                       font-family: Montserrat;
+                      font-weight: 600;
+                      word-wrap: break-word;
+                      margin-left: 1%;
+                    "
+                  >
+                    {{ post.title }}
+                  </div>
+                </div>
+                <div
+                  style="
+                    height: 32px;
+                    color: black;
+                    font-size: 14px;
+                    font-family: roboto;
+                    font-weight: 400;
+                    word-wrap: break-word;
+                    margin-left: 0.5%;
+                  "
+                >
+                  {{ post.description }}
+                </div>
+                <div
+                  style="
+                    align-self: stretch;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    gap: 8px;
+                    display: inline-flex;
+                  "
+                >
+                  <div
+                    style="
+                      justify-content: flex-start;
+                      align-items: flex-start;
+                      gap: 8px;
+                      display: flex;
+                    "
+                    *ngFor="let tag of post.tags"
+                  >
+                    <div
+                      style="
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        gap: 8px;
+                        display: flex;
+                      "
+                    >
+                      <div
+                        style="
+                          padding-left: 8px;
+                          padding-right: 8px;
+                          padding-top: 4px;
+                          padding-bottom: 4px;
+                          background: rgba(228, 45, 85, 0.15);
+                          border-radius: 6px;
+                          justify-content: center;
+                          align-items: center;
+                          gap: 10px;
+                          display: flex;
+                        "
+                      >
+                        <div
+                          style="
+                            color: #d40839;
+                            font-size: 14px;
+                            font-family: roboto;
+                            font-weight: 400;
+                            word-wrap: break-word;
+                          "
+                        >
+                          {{ tag }}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  style="
+                    padding-left: 6px;
+                    padding-right: 6px;
+                    padding-top: 2px;
+                    padding-bottom: 2px;
+                    border-radius: 6px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    display: inline-flex;
+                  "
+                >
+                  <div
+                    style="
+                      color: rgba(10, 25, 43, 0.65);
+                      font-size: 12px;
+                      font-family: roboto;
                       font-weight: 400;
                       word-wrap: break-word;
                     "
                   >
-                    Questions I Followed
+                    Asked 3 days ago
                   </div>
-                </div>
-              </div>
-            </div>
-            <div
-              style="
-                align-self: stretch;
-                height: 156px;
-                padding: 12px;
-                background: rgba(206, 206, 210, 0.12);
-                border-radius: 12px;
-                overflow: hidden;
-                border: 1px #ceced2 solid;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: flex-start;
-                gap: 8px;
-                display: flex;
-              "
-            >
-              <div
-                style="
-                  justify-content: flex-start;
-                  align-items: center;
-                  gap: 8px;
-                  display: inline-flex;
-                "
-              >
-                <div
-                  style="
-                    width: 392px;
-                    align-self: stretch;
-                    color: #0a192b;
-                    font-size: 16px;
-                    font-family: Montserrat;
-                    font-weight: 600;
-                    word-wrap: break-word;
-                    margin-left: 1%;
-                  "
-                >
-                  Problems with num()
-                </div>
-              </div>
-              <div
-                style="
-                  height: 32px;
-                  color: black;
-                  font-size: 14px;
-                  font-family: roboto;
-                  font-weight: 400;
-                  word-wrap: break-word;
-                  margin-left: .5%;
-                "
-              >
-                Answer summary?
-              </div>
-              <div
-                style="
-                  align-self: stretch;
-                  padding-top: 5px;
-                  padding-bottom: 5px;
-                  justify-content: flex-start;
-                  align-items: flex-start;
-                  gap: 8px;
-                  display: inline-flex;
-                "
-              >
-                <div
-                  style="
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    gap: 8px;
-                    display: flex;
-                  "
-                >
-                  <div
-                    style="
-                      justify-content: flex-start;
-                      align-items: flex-start;
-                      gap: 8px;
-                      display: flex;
-                    "
-                  >
-                    <div
-                      style="
-                        padding-left: 8px;
-                        padding-right: 8px;
-                        padding-top: 4px;
-                        padding-bottom: 4px;
-                        background: rgba(228, 45, 85, 0.15);
-                        border-radius: 6px;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 10px;
-                        display: flex;
-                      "
-                    >
-                      <div
-                        style="
-                          color: #D40839;
-                          font-size: 14px;
-                          font-family: roboto;
-                          font-weight: 400;
-                          word-wrap: break-word;
-                        "
-                      >
-                        Web development
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  style="
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    gap: 8px;
-                    display: flex;
-                  "
-                >
-                  <div
-                    style="
-                      justify-content: flex-start;
-                      align-items: flex-start;
-                      gap: 8px;
-                      display: flex;
-                    "
-                  >
-                    <div
-                      style="
-                        padding-left: 8px;
-                        padding-right: 8px;
-                        padding-top: 4px;
-                        padding-bottom: 4px;
-                        background: rgba(228, 45, 85, 0.15);
-                        border-radius: 6px;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 10px;
-                        display: flex;
-                      "
-                    >
-                      <div
-                        style="
-                          color: #D40839;
-                          font-size: 14px;
-                          font-family: roboto;
-                          font-weight: 400;
-                          word-wrap: break-word;
-                        "
-                      >
-                        Bootstrap
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                style="
-                  padding-left: 6px;
-                  padding-right: 6px;
-                  padding-top: 2px;
-                  padding-bottom: 2px;
-                  border-radius: 6px;
-                  justify-content: center;
-                  align-items: center;
-                  gap: 10px;
-                  display: inline-flex;
-                "
-              >
-                <div
-                  style="
-                    color: rgba(10, 25, 43, 0.65);
-                    font-size: 12px;
-                    font-family: roboto;
-                    font-weight: 400;
-                    word-wrap: break-word;
-                  "
-                >
-                  Asked 3 days ago
-                </div>
-              </div>
-            </div>
-            <div
-              style="
-                align-self: stretch;
-                height: 156px;
-                padding: 12px;
-                background: rgba(206, 206, 210, 0.12);
-                border-radius: 12px;
-                overflow: hidden;
-                border: 1px #ceced2 solid;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: flex-start;
-                gap: 8px;
-                display: flex;
-              "
-            >
-              <div
-                style="
-                  justify-content: flex-start;
-                  align-items: center;
-                  gap: 8px;
-                  display: inline-flex;
-                "
-              >
-                <div
-                  style="
-                    width: 392px;
-                    align-self: stretch;
-                    color: #0a192b;
-                    font-size: 16px;
-                    font-family: Montserrat;
-                    font-weight: 600;
-                    word-wrap: break-word;
-                    margin-left: 1%;
-                  "
-                >
-                  Problems with num()
-                </div>
-              </div>
-              <div
-                style="
-                  height: 32px;
-                  color: black;
-                  font-size: 14px;
-                  font-family: roboto;
-                  font-weight: 400;
-                  word-wrap: break-word;
-                  margin-left: .5%;
-                "
-              >
-                Answer summary?
-              </div>
-              <div
-                style="
-                  align-self: stretch;
-                  padding-top: 5px;
-                  padding-bottom: 5px;
-                  justify-content: flex-start;
-                  align-items: flex-start;
-                  gap: 8px;
-                  display: inline-flex;
-                "
-              >
-                <div
-                  style="
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    gap: 8px;
-                    display: flex;
-                  "
-                >
-                  <div
-                    style="
-                      justify-content: flex-start;
-                      align-items: flex-start;
-                      gap: 8px;
-                      display: flex;
-                    "
-                  >
-                    <div
-                      style="
-                        padding-left: 8px;
-                        padding-right: 8px;
-                        padding-top: 4px;
-                        padding-bottom: 4px;
-                        background: rgba(228, 45, 85, 0.15);
-                        border-radius: 6px;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 10px;
-                        display: flex;
-                      "
-                    >
-                      <div
-                        style="
-                          color: #D40839;
-                          font-size: 14px;
-                          font-family: roboto;
-                          font-weight: 400;
-                          word-wrap: break-word;
-                        "
-                      >
-                        Web development
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  style="
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    gap: 8px;
-                    display: flex;
-                  "
-                >
-                  <div
-                    style="
-                      justify-content: flex-start;
-                      align-items: flex-start;
-                      gap: 8px;
-                      display: flex;
-                    "
-                  >
-                    <div
-                      style="
-                        padding-left: 8px;
-                        padding-right: 8px;
-                        padding-top: 4px;
-                        padding-bottom: 4px;
-                        background: rgba(228, 45, 85, 0.15);
-                        border-radius: 6px;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 10px;
-                        display: flex;
-                      "
-                    >
-                      <div
-                        style="
-                          color: #D40839;
-                          font-size: 14px;
-                          font-family: roboto;
-                          font-weight: 400;
-                          word-wrap: break-word;
-                        "
-                      >
-                        Bootstrap
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                style="
-                  padding-left: 6px;
-                  padding-right: 6px;
-                  padding-top: 2px;
-                  padding-bottom: 2px;
-                  border-radius: 6px;
-                  justify-content: center;
-                  align-items: center;
-                  gap: 10px;
-                  display: inline-flex;
-                "
-              >
-                <div
-                  style="
-                    color: rgba(10, 25, 43, 0.65);
-                    font-size: 12px;
-                    font-family: roboto;
-                    font-weight: 400;
-                    word-wrap: break-word;
-                  "
-                >
-                  Asked 3 days ago
-                </div>
-              </div>
-            </div>
-            <div
-              style="
-                align-self: stretch;
-                height: 156px;
-                padding: 12px;
-                background: rgba(206, 206, 210, 0.12);
-                border-radius: 12px;
-                overflow: hidden;
-                border: 1px #ceced2 solid;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: flex-start;
-                gap: 8px;
-                display: flex;
-              "
-            >
-              <div
-                style="
-                  justify-content: flex-start;
-                  align-items: center;
-                  gap: 8px;
-                  display: inline-flex;
-                "
-              >
-                <div
-                  style="
-                    width: 392px;
-                    align-self: stretch;
-                    color: #0a192b;
-                    font-size: 16px;
-                    font-family: Montserrat;
-                    font-weight: 600;
-                    word-wrap: break-word;
-                    margin-left: 1%;
-                  "
-                >
-                  Problems with num()
-                </div>
-              </div>
-              <div
-                style="
-                  width: 297px;
-                  height: 32px;
-                  color: black;
-                  font-size: 14px;
-                  font-family: roboto;
-                  font-weight: 400;
-                  word-wrap: break-word;
-                  margin-left: .5%;
-                "
-              >
-                Answer summary?
-              </div>
-              <div
-                style="
-                  align-self: stretch;
-                  padding-top: 5px;
-                  padding-bottom: 5px;
-                  justify-content: flex-start;
-                  align-items: flex-start;
-                  gap: 8px;
-                  display: inline-flex;
-                "
-              >
-                <div
-                  style="
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    gap: 8px;
-                    display: flex;
-                  "
-                >
-                  <div
-                    style="
-                      justify-content: flex-start;
-                      align-items: flex-start;
-                      gap: 8px;
-                      display: flex;
-                    "
-                  >
-                    <div
-                      style="
-                        padding-left: 8px;
-                        padding-right: 8px;
-                        padding-top: 4px;
-                        padding-bottom: 4px;
-                        background: rgba(228, 45, 85, 0.15);
-                        border-radius: 6px;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 10px;
-                        display: flex;
-                      "
-                    >
-                      <div
-                        style="
-                          color: #D40839;
-                          font-size: 14px;
-                          font-family: roboto;
-                          font-weight: 400;
-                          word-wrap: break-word;
-                        "
-                      >
-                        Web development
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  style="
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    gap: 8px;
-                    display: flex;
-                  "
-                >
-                  <div
-                    style="
-                      justify-content: flex-start;
-                      align-items: flex-start;
-                      gap: 8px;
-                      display: flex;
-                    "
-                  >
-                    <div
-                      style="
-                        padding-left: 8px;
-                        padding-right: 8px;
-                        padding-top: 4px;
-                        padding-bottom: 4px;
-                        background: rgba(228, 45, 85, 0.15);
-                        border-radius: 6px;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 10px;
-                        display: flex;
-                      "
-                    >
-                      <div
-                        style="
-                          color: #D40839;
-                          font-size: 14px;
-                          font-family: roboto;
-                          font-weight: 400;
-                          word-wrap: break-word;
-                        "
-                      >
-                        Bootstrap
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                style="
-                  padding-left: 6px;
-                  padding-right: 6px;
-                  padding-top: 2px;
-                  padding-bottom: 2px;
-                  border-radius: 6px;
-                  justify-content: center;
-                  align-items: center;
-                  gap: 10px;
-                  display: inline-flex;
-                "
-              >
-                <div
-                  style="
-                    color: rgba(10, 25, 43, 0.65);
-                    font-size: 12px;
-                    font-family: roboto;
-                    font-weight: 400;
-                    word-wrap: break-word;
-                  "
-                >
-                  Asked 3 days ago
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-
-
-
-      
-
-    <div class="flex-child layout-right">
+      <div class="flex-child layout-right">
         <div class="skill">
           <div
             style="
@@ -1175,7 +756,6 @@
               justify-content: flex-start;
               align-items: center;
               display: flex;
-
             "
           >
             <div
@@ -1194,9 +774,7 @@
               SKILLS
             </div>
             <div class="editbtnbox">
-              <div class="editbtn btn btn-light">
-                Edit
-              </div>
+              <div class="editbtn btn btn-light">Edit</div>
             </div>
           </div>
           <div
@@ -1205,124 +783,133 @@
               padding: 12px;
               border-top: 1px #ceced2 solid;
               flex-direction: column;
-              
+
               gap: 10px;
               display: flex;
             "
           >
-            <div
-              style="
-
-                align-items: center;
-                gap: 5px;
-                display: inline-flex;
-              "
-            >
-              <div
-                style="
-
-                  display: flex;
-                "
-              >
-              
-    <div class="skill_block" style="display: flex; flex-direction: column; margin: 5px; gap:5px;">
-
-          <!-- Front-end-->
-          <div class="skills_block" style="display: flex; flex-direction: row; width: 100%;">
-                <button class="questiontype_block btn btn-light mb-2 button-inactive">
-                  Front-end
-                </button>
-
+            <div style="align-items: center; gap: 5px; display: inline-flex">
+              <div style="display: flex">
                 <div
+                  class="skill_block"
                   style="
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    gap: 8px;
                     display: flex;
+                    flex-direction: column;
+                    margin: 5px;
+                    gap: 5px;
                   "
                 >
-                  <div style="width: 20px; height: 20px; position: relative">
-                    <div class="reveiw1" style="display: flex; flex-direction: row;">
-                      <img src="star.png" width="25px"; height="25px";/>
-                      <img src="star.png" width="25px"; height="25px";/>
-                      <img src="star.png" width="25px"; height="25px";/>
-                      <img src="star.png" width="25px"; height="25px";/>
-                      <img src="star.png" width="25px"; height="25px";/>
+                  <!-- Front-end-->
+                  <div
+                    class="skills_block"
+                    style="display: flex; flex-direction: row; width: 100%"
+                  >
+                    <button
+                      class="questiontype_block btn btn-light mb-2 button-inactive"
+                    >
+                      Front-end
+                    </button>
+
+                    <div
+                      style="
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        gap: 8px;
+                        display: flex;
+                      "
+                    >
+                      <div
+                        style="width: 20px; height: 20px; position: relative"
+                      >
+                        <div
+                          class="reveiw1"
+                          style="display: flex; flex-direction: row"
+                        >
+                          <img src="star.png" width="25px" height="25px" />
+                          <img src="star.png" width="25px" height="25px" />
+                          <img src="star.png" width="25px" height="25px" />
+                          <img src="star.png" width="25px" height="25px" />
+                          <img src="star.png" width="25px" height="25px" />
+                        </div>
+                      </div>
                     </div>
                   </div>
-                
-                </div>
-          </div>
 
+                  <!-- Bootstrap-->
+                  <div
+                    class="skills_block"
+                    style="display: flex; flex-direction: row"
+                  >
+                    <button
+                      class="questiontype_block btn btn-light mb-2 button-inactive"
+                    >
+                      Bootstrap
+                    </button>
 
-          <!-- Bootstrap-->
-          <div class="skills_block" style="display: flex; flex-direction: row;">
-            <button class="questiontype_block btn btn-light mb-2 button-inactive">
-              Bootstrap
-            </button>
+                    <div
+                      style="
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        gap: 8px;
+                        display: flex;
+                      "
+                    >
+                      <div
+                        style="width: 20px; height: 20px; position: relative"
+                      >
+                        <div
+                          class="reveiw1"
+                          style="display: flex; flex-direction: row"
+                        >
+                          <img src="star.png" width="25px" height="25px" />
+                          <img src="star.png" width="25px" height="25px" />
+                          <img src="star.png" width="25px" height="25px" />
+                          <img src="star.png" width="25px" height="25px" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-            <div
-              style="
-                justify-content: flex-start;
-                align-items: flex-start;
-                gap: 8px;
-                display: flex;
-              "
-            >
-              <div style="width: 20px; height: 20px; position: relative">
-                <div class="reveiw1" style="display: flex; flex-direction: row;">
-                  <img src="star.png" width="25px"; height="25px";/>
-                  <img src="star.png" width="25px"; height="25px";/>
-                  <img src="star.png" width="25px"; height="25px";/>
-                  <img src="star.png" width="25px"; height="25px";/>
-                  
+                  <!-- CSS -->
+                  <div
+                    class="skills_block"
+                    style="display: flex; flex-direction: row"
+                  >
+                    <button
+                      class="questiontype_block btn btn-light mb-2 button-inactive"
+                    >
+                      CSS
+                    </button>
+
+                    <div
+                      style="
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        gap: 8px;
+                        display: flex;
+                      "
+                    >
+                      <div
+                        style="width: 20px; height: 20px; position: relative"
+                      >
+                        <div
+                          class="reveiw1"
+                          style="display: flex; flex-direction: row"
+                        >
+                          <img src="star.png" width="25px" height="25px" />
+                          <img src="star.png" width="25px" height="25px" />
+                          <img src="star.png" width="25px" height="25px" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            
-            </div>
-      </div>
-
-
-          <!-- CSS -->
-          <div class="skills_block" style="display: flex; flex-direction: row;">
-            <button class="questiontype_block btn btn-light mb-2 button-inactive">
-              CSS
-            </button>
-
-            <div
-              style="
-                justify-content: flex-start;
-                align-items: flex-start;
-                gap: 8px;
-                display: flex;
-              "
-            >
-              <div style="width: 20px; height: 20px; position: relative">
-                <div class="reveiw1" style="display: flex; flex-direction: row;">
-                  <img src="star.png" width="25px"; height="25px";/>
-                  <img src="star.png" width="25px"; height="25px";/>
-                  <img src="star.png" width="25px"; height="25px";/>
-                  
-                </div>
-              </div>
-            
             </div>
           </div>
-
         </div>
-      </div>     
 
-     </div>
-              
-          
-    </div>
-  </div>
-
-
-  
-
-
-          <div
+        <div
           style="
             align-self: stretch;
             width: 100%;
@@ -1406,6 +993,7 @@
                   gap: 16px;
                   display: inline-flex;
                 "
+                *ngFor="let user of allUsers"
               >
                 <div
                   style="
@@ -1432,7 +1020,7 @@
                   >
                     <img
                       style="width: 65px; height: 65px"
-                      src="https://via.placeholder.com/65x65"
+                      [src]="user.profileImage"
                     />
                   </div>
                   <div
@@ -1455,7 +1043,7 @@
                         word-wrap: break-word;
                       "
                     >
-                      Eren Jaeger
+                      {{ user.name }}
                     </div>
                   </div>
                 </div>
@@ -1491,7 +1079,7 @@
                     >
                       <div
                         style="
-                          color: #D40839;
+                          color: #d40839;
                           font-size: 14px;
                           font-family: roboto;
                           font-weight: 400;
@@ -1526,7 +1114,7 @@
                     >
                       <div
                         style="
-                          color: #D40839;
+                          color: #d40839;
                           font-size: 14px;
                           font-family: roboto;
                           font-weight: 400;
@@ -1550,201 +1138,15 @@
                     display: inline-flex;
                   "
                 >
-                  <div class="editbtn btn btn-light" style="font-weight: 600;">
-                    Connect
-                  </div>
-                </div>
-              </div>
-              <div
-                style="
-                  flex: 1 1 0;
-                  padding-left: 16px;
-                  padding-right: 16px;
-                  padding-top: 12px;
-                  padding-bottom: 12px;
-                  border-radius: 12px;
-                  overflow: hidden;
-                  border: 1px #ceced2 solid;
-                  flex-direction: column;
-                  justify-content: flex-start;
-                  align-items: center;
-                  gap: 16px;
-                  display: inline-flex;
-                "
-              >
-                <div
-                  style="
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 12px;
-                    display: flex;
-                  "
-                >
-                  <div
-                    style="
-                      width: 65px;
-                      height: 65px;
-                      background: #ffc7d6;
-                      border-radius: 999px;
-                      overflow: hidden;
-                      justify-content: center;
-                      align-items: center;
-                      display: inline-flex;
-                    "
-                  >
-                    <img
-                      style="width: 65px; height: 65px"
-                      src="https://via.placeholder.com/68x68"
-                    />
-                  </div>
-                  <div
-                    style="
-                      color: #0a192b;
-                      font-size: 20px;
-                      font-family: Montserrat;
-                      font-weight: 600;
-                      word-wrap: break-word;
-                    "
-                  >
-                    Eren Jaeger
-                  </div>
-                </div>
-                <div
-                  style="
-                    justify-content: center;
-                    align-items: flex-start;
-                    gap: 4px;
-                    display: inline-flex;
-                  "
-                >
-                  <div
-                    style="
-                      justify-content: flex-start;
-                      align-items: flex-start;
-                      gap: 8px;
-                      display: flex;
-                    "
-                  >
-                    <div
-                      style="
-                        padding-left: 8px;
-                        padding-right: 8px;
-                        padding-top: 4px;
-                        padding-bottom: 4px;
-                        background: rgba(228, 45, 85, 0.15);
-                        border-radius: 6px;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 10px;
-                        display: flex;
-                      "
-                    >
-                      <div
-                        style="
-                          color: #D40839;
-                          font-size: 14px;
-                          font-family: roboto;
-                          font-weight: 400;
-                          word-wrap: break-word;
-                        "
-                      >
-                        Frontend
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    style="
-                      justify-content: flex-start;
-                      align-items: flex-start;
-                      gap: 8px;
-                      display: flex;
-                    "
-                  >
-                    <div
-                      style="
-                        padding-left: 8px;
-                        padding-right: 8px;
-                        padding-top: 4px;
-                        padding-bottom: 4px;
-                        background: rgba(228, 45, 85, 0.15);
-                        border-radius: 6px;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 10px;
-                        display: flex;
-                      "
-                    >
-                      <div
-                        style="
-                          color: #D40839;
-                          font-size: 14px;
-                          font-family: roboto;
-                          font-weight: 400;
-                          word-wrap: break-word;
-                        "
-                      >
-                        HTML
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    style="
-                      justify-content: flex-start;
-                      align-items: flex-start;
-                      gap: 8px;
-                      display: flex;
-                    "
-                  >
-                    <div
-                      style="
-                        padding-left: 8px;
-                        padding-right: 8px;
-                        padding-top: 4px;
-                        padding-bottom: 4px;
-                        background: rgba(228, 45, 85, 0.15);
-                        border-radius: 6px;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 10px;
-                        display: flex;
-                      "
-                    >
-                      <div
-                        style="
-                          color: #D40839;
-                          font-size: 14px;
-                          font-family: roboto;
-                          font-weight: 400;
-                          word-wrap: break-word;
-                        "
-                      >
-                        CSS
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  style="
-                    height: 32px;
-                    background: #e5e5e9;
-                    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-                    border-radius: 6px;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 8px;
-                    display: inline-flex;
-                  "
-                >
-                  <div class="editbtn btn btn-light" style="font-weight: 600;">
+                  <div class="editbtn btn btn-light" style="font-weight: 600">
                     Connect
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div> 
-    </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   userEmail: any;
   allPosts: any;
   userForPosts: any;
-
+  userPosts: any;
   constructor(
     private http: HttpClient,
     private router: Router,
@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.userService.getUser());
+    let userDetails = this.userService.getUser();
     this.userEmail = this.userService.getUser()?.email;
 
     this.userForPosts = {
@@ -39,11 +40,29 @@ export class HomeComponent implements OnInit {
     };
 
     this.getAllPosts(this.userForPosts);
+
+    let userData = {
+      email: userDetails?.email,
+    };
+
+    this.http
+      .post('http://localhost:5001/api/posts/getUserPosts', userData)
+      .subscribe(
+        (response) => {
+          console.log(response);
+          this.userPosts = response;
+          // Handle success - maybe navigate the user or display a success message
+        },
+        (error) => {
+          console.error(error);
+          // Handle error - maybe display an error message to the user
+        }
+      );
   }
 
   getAllPosts(userForPosts: any) {
     this.http
-      .post('http://localhost:5001/api/posts/getUserPosts', userForPosts)
+      .post('http://localhost:5001/api/posts/getAllPosts', userForPosts)
       .subscribe(
         (response) => {
           console.log(response);
@@ -220,6 +239,8 @@ export class HomeComponent implements OnInit {
   }
 
   viewPost(post: any) {
+    console.log(post);
+
     this.postService.setPost(post);
     this.router.navigate(['/question-detail']);
   }
