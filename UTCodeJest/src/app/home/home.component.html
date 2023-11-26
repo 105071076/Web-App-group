@@ -83,7 +83,7 @@
                }
 
                .btn-link {
-                 color: #e42d55;
+                 color: #D40839;
                  font-family: "montserrat", sans-serif;
                  font-weight: 400;
                  font-style: normal;
@@ -501,8 +501,8 @@
                }
 
                .questiontype_block {
-                 background: #f2d5dc;
-                 color: #e42d55;
+                 background: #FFE5EC;
+                 color: #D40839;
                  border: none;
                  border-radius: 10px;
                  font-size: 14px;
@@ -530,8 +530,8 @@
                }
 
                .button-inactive {
-                 background: #f2d5dc;
-                 color: #e42d55;
+                 background: #FFE5EC;
+                 color: #D40839;
                  border-color: #e3e6ea;
 
                  /* Prevents the hover effect */
@@ -547,7 +547,7 @@
                  padding: 10px 20px;
                  border-radius: 12px;
                  margin-top: 10px;
-                 margin-bottom: 155px;
+                 margin-bottom: 165px;
                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
                  box-sizing: border-box;
                  width: calc(75% - 30px);
@@ -1122,12 +1122,12 @@
                       class="mt-2"
                     >
                       Frequently used tags
-                      <div class="tag-content">
-                        <div class="tag">HTML</div>
-                        <div class="tag">CSS</div>
-                        <div class="tag">JavaSript</div>
-                        <div class="tag">Angular</div>
-                        <div class="tag">Python</div>
+                      <div class="tag-content" style="margin-top:2%;">
+                        <div class="tag" style="font-family: roboto, sans-serif; font-weight: 400; font-style: normal;">HTML</div>
+                        <div class="tag" style="font-family: roboto, sans-serif; font-weight: 400; font-style: normal;">CSS</div>
+                        <div class="tag" style="font-family: roboto, sans-serif; font-weight: 400; font-style: normal;">JavaSript</div>
+                        <div class="tag" style="font-family: roboto, sans-serif; font-weight: 400; font-style: normal;">Angular</div>
+                        <div class="tag" style="font-family: roboto, sans-serif; font-weight: 400; font-style: normal;">Python</div>
                       </div>
                     </div>
                   </div>
@@ -1266,7 +1266,53 @@
           </button>
         </div>
         <hr class="custom-line" />
-        <a *ngIf="allPosts.length == 0">It looks kinda empty here :(</a>
+        
+        <!-- Added TOP QUESTIONS BACK -->
+
+          <a class="questions_block btn" routerlink="/question-detail" role="button">
+              <div class="inner_questions_block">
+                  <div class="question_title">
+                      <img src="david.png" width="30" height="30">
+                      <h5 style="margin-left: 5px;">Problems with num()</h5>
+                  </div>
+                  <p class="content">I faced problems in adding num() to my sorting function.</p>
+                  <button class="questiontype_block btn btn-light mb-2 button-inactive">Web development</button>
+                  <button class="questiontype_block btn btn-light mb-2 button-inactive">Bootstrap</button>
+                  <p class="ptitle">Asked 3 days ago</p>
+              </div>
+          </a>
+
+          <a class="questions_block btn" routerlink="/question-detail" role="button">
+              <div class="inner_questions_block">
+                  <div class="question_title">
+                      <img src="profile3.png" width="30" height="30">
+                      <h5 style="margin-left: 5px;">Problems with num()</h5>
+                  </div>
+                  <p class="content">I faced problems in adding num() to my sorting function.</p>
+                  <button class="questiontype_block btn btn-light mb-2 button-inactive">Web development</button>
+                  <button class="questiontype_block btn btn-light mb-2 button-inactive">Bootstrap</button>
+                  <p class="ptitle">Asked 3 days ago</p>
+              </div>
+          </a>
+
+          <a class="questions_block btn" routerlink="/question-detail" role="button">
+              <div class="inner_questions_block">
+                  <div class="question_title">
+                      <img src="profile3.png" width="30" height="30">
+                      <h5 style="margin-left: 5px;">Problems with num()</h5>
+                  </div>
+                  <p class="content">I faced problems in adding num() to my sorting function.</p>
+                  <button class="questiontype_block btn btn-light mb-2 button-inactive">Web development</button>
+                  <button class="questiontype_block btn btn-light mb-2 button-inactive">Bootstrap</button>
+                  <p class="ptitle">Asked 3 days ago</p>
+              </div>
+          </a>
+
+
+
+
+
+
         <a
           *ngFor="let post of allPosts"
           class="questions_block btn"
@@ -1321,7 +1367,7 @@
           </button>
         </div>
         <hr class="custom-line2" />
-        <button class="discussions_block btn btn-light mb-2">
+        <button class="discussions_block btn btn-light mb-2" routerlink="/forum-detail">
           <div class="inner_discussions_block">
             <img
               src="assets/bootstrap.png"
@@ -1336,7 +1382,7 @@
           </div>
         </button>
 
-        <button class="discussions_block btn btn-light mb-2">
+        <button class="discussions_block btn btn-light mb-2" routerlink="/forum-detail">
           <div class="inner_discussions_block">
             <img src="assets/amazon.png" alt="Logo" width="500" height="118" />
             <div class="discussion_title">
@@ -1346,7 +1392,7 @@
           </div>
         </button>
 
-        <button class="discussions_block btn btn-light mb-2">
+        <button class="discussions_block btn btn-light mb-2" routerlink="/forum-detail">
           <div class="inner_discussions_block">
             <img src="assets/css.png" alt="Logo" width="500" height="150" />
             <div class="discussion_title">
